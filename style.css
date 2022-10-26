@@ -1,0 +1,117 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+}
+
+.homepage {
+    display:flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content: center;
+}
+
+.homepage h1 {
+    font-size: 1400%;
+    font-weight: bolder;
+    position: relative;
+    color: rgb(251, 254, 251);
+    align-self: center;
+    justify-self: center;
+}
+
+.homepage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    background-image: url(images/teagram-background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.feed-page {
+    background-color: white;
+    height: 100vh;
+}
+
+.feed-page h1 {
+    text-align: center;
+    color: rgb(232, 223, 223);
+    margin: 120px 0px 120px;
+    font-size: 50px;
+}
+
+.feed {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contact {
+    height: 50vh;
+    background-color: lightskyblue;
+}
+
+.posts {
+    display:flex;
+    flex-direction:column;
+    color: rgb(232, 223, 223);
+    height: 600px;
+    width: 500px;
+    border: 3px solid rgb(232, 223, 223);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6%;
+}
+
+.like-btn {
+    width: 150px;
+    text-align: center;
+    align-self: center;
+    background-color: white;
+    border: 0.5px solid rgb(85, 79, 79);
+    color: rgb(232, 223, 223);
+    border-radius: 10px;
+    padding: 15px 15px;
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out;
+}
+
+footer {
+    text-align: center;
+}
+
+.like-btn:hover, .like-btn:focus {
+    background-color: white;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.posts img {
+    width: 70%;
+}
+
+#facebook {
+    width: 40px;
+}
+
+#instagram {
+    width: 60px;
+}
+
+#mail {
+    margin-left: 7px;
+    width: 33px;
+}

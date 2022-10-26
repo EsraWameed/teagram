@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS teagram_db;
+
+CREATE DATABASE teagram_db;

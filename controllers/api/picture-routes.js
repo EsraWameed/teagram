@@ -55,6 +55,7 @@ router.post("/", upload.single("file"), async (req, res) => {
     }
 });
 
+
 //delete picture route
 router.delete('/:id', async (req, res) => {
     try {
@@ -75,3 +76,6 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+module.exports = router;
+

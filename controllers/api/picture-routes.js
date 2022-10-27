@@ -55,4 +55,27 @@ router.post("/", upload.single("file"), async (req, res) => {
     }
 });
 
+
+//delete picture route
+router.delete('/:id', async (req, res) => {
+    try {
+        const pictureData = await Image.destroy({
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+            },
+        });
+
+        if (!pictureData) {
+            res.status(404).json({ message: 'No picture found with this id!' });
+            return;
+        }
+
+        res.status(200).json(pictureData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
+

@@ -11,6 +11,9 @@ Picture.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    data: {
+      type: DataTypes.BLOB("long"),
+    },
     caption: {
       type: DataTypes.STRING,
       allowNull: false,

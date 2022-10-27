@@ -16,7 +16,13 @@ const hbs = exphbs.create({ helpers });
 //connected to remote db
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: {
+        //session will expire in one hour idel time
+        maxAge: 60 * 60 * 1000,
+        httpOnly: true,
+        secure: false,
+        sameSite: 'strict',
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

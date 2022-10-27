@@ -54,3 +54,5 @@ router.post("/", upload.single("file"), async (req, res) => {
         return res.send(`Error when trying upload images: ${error}`);
     }
 });
+
+module.exports = router;

@@ -40,9 +40,10 @@
 	    </div>
         </header>
 
-
     <section class="feed-page">
         <h1>YOUR FEED</h1>
+        <input class="search-bar" type="text" placeholder="Search">
+
         <div class="feed">
             <article class="posts">
                 <h2>USER</h2>
@@ -63,6 +64,53 @@
             </article>
         </div>
     </section>
+
+
+    <section class="user-page">
+        <h1>YOUR ACCOUNT</h1>
+        <img class="view-profile" onclick="document.getElementById('profile-page').style.display='block'" src="develop/images/profile-icon.pmg.png">
+
+        <img class="add-post" onclick="document.getElementById('upload-page').style.display='block'" src="develop/images/white-plus-icon.png">
+
+        <div id="profile-page" class="modal">
+
+		    <form class="modal-content animate" >
+				<span onclick="document.getElementById('profile-page').style.display='none'" class="close">&times;</span>
+				<h1 class="title">YOUR ACCOUNT</h1>
+                <img class="change-profile" src="develop/images/profile-icon.pmg.png">
+
+			    <div class="container" style="background-color:#f1f1f1">
+				    <input type="text" placeholder="Username" name="uname" required>
+
+				    <input type="password" placeholder="Password" name="psw" required>
+
+                    <input type="text" placeholder="Bio" name="psw" required>
+			    </div>
+
+			    <div class="container" style="background-color:#f1f1f1">
+				    <button class="submit-btn" type="submit">Update Profile</button>
+			    </div>
+		    </form>
+	    </div>
+
+        <div id="upload-page" class="modal">
+
+		    <form class="modal-content animate" >
+				<span onclick="document.getElementById('upload-page').style.display='none'" class="close">&times;</span>
+				<h1 class="title">UPLOAD MEDIA</h1>
+
+			    <div class="container" style="background-color:#f1f1f1">
+				    <img class="upload-icon" src="develop/images/upload-icon.png">
+			    </div>
+
+			    <div class="container" style="background-color:#f1f1f1">
+				    <button class="submit-btn" type="submit">Upload Media</button>
+			    </div>
+		    </form>
+	    </div>
+    </section>
+
+
 
     <footer>
         @TEAGRAM

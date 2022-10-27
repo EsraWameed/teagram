@@ -9,6 +9,7 @@ router.get('/', async (req, res) => {
         const newComment = await Comment.findAll({ include: [User] });
 
         const comments = newComment.map(cmnt => cmnt.get({ plain: true }));
+        //TODO: add path when view is done
         res.render('', {
             comments,
             loggedIn: req.session.loggedIn,

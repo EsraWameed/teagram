@@ -1,0 +1,281 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: white;
+}
+
+.homepage {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+}
+
+.company {
+    font-size: 1400%;
+    font-weight: bolder;
+    position: relative;
+    color: rgb(251, 254, 251);
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 20px;
+}
+
+.homepage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    background-image: url(/develop/images/teagram-background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.feed-page {
+    background-color: white;
+    height: 100vh;
+}
+
+.feed-page h1 {
+    text-align: center;
+    color: rgb(232, 223, 223);
+    margin: 120px 0px 120px;
+    font-size: 50px;
+}
+
+.feed {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contact {
+    height: 50vh;
+    background-color: lightskyblue;
+}
+
+.posts {
+    display:flex;
+    flex-direction:column;
+    color: rgb(232, 223, 223);
+    height: 600px;
+    width: 400px;
+    border: 3px solid rgb(232, 223, 223);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6%;
+}
+
+.like-btn {
+    width: 150px;
+    text-align: center;
+    align-self: center;
+    background-color: white;
+    border: 0.5px solid rgb(232, 223, 223);
+    color: rgb(232, 223, 223);
+    border-radius: 10px;
+    padding: 15px 15px;
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out;
+}
+
+.login-btn {
+    position: relative;
+    align-self: center;
+    width: 6%;
+}
+
+footer {
+    text-align: center;
+}
+
+.like-btn:hover, .like-btn:focus, .submit-btn:hover, .submit-btn:focus {
+    background-color: white;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.login-btn:hover, .login-btn:focus {
+    cursor: pointer;
+}
+
+.posts img {
+    width: 70%;
+}
+
+/*assign full width inputs*/
+input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    display: inline-block;
+    border: 1px solid #9dd1ff;
+    box-sizing: border-box;
+    color: #ccc;
+    text-align: center;
+}
+
+p {
+    color:white;
+    margin-bottom:0px;
+}
+
+/*set a style for the buttons*/
+.submit-btn {
+    width: 150px;
+    text-align: center;
+    align-self: center;
+    background-color: white;
+    border: 0.5px solid #9dd1ff;
+    color: #ccc;
+    border-radius: 10px;
+    padding: 15px 15px;
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out;
+}
+
+
+.title {
+    color: white;
+    text-align: center;
+    font-size: 250%;
+}
+
+
+/*set padding to the container*/
+.container {
+    display:flex;
+    flex-direction: column;
+    padding: 16px;
+    align-items: center;
+    background:
+        linear-gradient(#9dd1ff, transparent),
+        linear-gradient(to top left, rgb(233, 136, 228), transparent),
+        linear-gradient(to top right, #9dd1ff, transparent);
+    background-blend-mode: screen;
+}
+
+/*set the forgot password text*/
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/*set the Modal background*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+/*style the model content box*/
+.modal-content {
+    text-align: center;
+    position: relative;
+    background:
+        linear-gradient(#9dd1ff, transparent),
+        linear-gradient(to top left, rgb(233, 136, 228), transparent),
+        linear-gradient(to top right, #9dd1ff, transparent);
+    background-blend-mode: screen;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+/*style the close button*/
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(233, 136, 228);
+    cursor: pointer;
+}
+
+/* add zoom animation*/
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+  
+  ::-webkit-input-placeholder {
+    color:#ccc;
+    text-align: center;
+  }
+  
+  :-moz-placeholder {
+    color:#ccc;
+    text-align: center;
+  }
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+
+@media (max-width: 900px) {
+    .company {
+        font-size: 500%;
+    }
+    .feed {
+        flex-direction: column;
+    }
+    .posts {
+        margin: 10px;
+        width: 300px;
+    }
+    .modal-content {
+        width: 60%;
+    }
+    .title {
+        font-size: 200%;
+    }
+    .close {
+        position: absolute;
+        right: 15px;
+        top: 0;
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+    }
+}

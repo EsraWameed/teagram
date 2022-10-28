@@ -129,6 +129,10 @@ body {
     width: 15%;
 }
 
+input[type="file"] {
+    display:none;
+}
+
 footer {
     text-align: center;
 }

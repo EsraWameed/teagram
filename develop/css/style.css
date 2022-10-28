@@ -92,22 +92,20 @@ body {
     width: 400px;
     border: 3px solid rgb(232, 223, 223);
     text-align: center;
-    justify-content: center;
     align-items: center;
     border-radius: 6%;
 }
 
 .like-btn {
-    width: 150px;
-    text-align: center;
-    align-self: center;
-    background-color: white;
-    border: 0.5px solid rgb(232, 223, 223);
-    color: rgb(232, 223, 223);
-    border-radius: 10px;
-    padding: 15px 15px;
-    text-decoration: none;
-    transition: background-color 200ms ease-in-out;
+    width: 10%;
+}
+
+.caption {
+    color:rgb(232, 223, 223);
+    border: 3px solid rgb(232, 223, 223);
+    height: 100px;
+    width: 270px;
+    margin-bottom: 30px;
 }
 
 .login-btn {
@@ -135,9 +133,13 @@ footer {
     text-align: center;
 }
 
-.like-btn:hover, .like-btn:focus, .submit-btn:hover, .submit-btn:focus {
+.submit-btn:hover, .submit-btn:focus {
     background-color: white;
     background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.like-btn:hover, .like-btn:focus {
     cursor: pointer;
 }
 
@@ -145,7 +147,7 @@ footer {
     cursor: pointer;
 }
 
-.posts img {
+.user-post {
     width: 70%;
 }
 

@@ -34,7 +34,7 @@ body {
     bottom: 0;
     right: 0;
     opacity: 1;
-    background-image: url(/develop/images/teagram-background.jpeg);
+    background-image: url(/public/images/teagram-background.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -78,6 +78,9 @@ body {
     align-items: center;
 }
 
+label {
+    color: white;
+}
 
 .contact {
     height: 50vh;
@@ -188,7 +191,7 @@ p {
 }
 
 /*set a style for the buttons*/
-.submit-btn {
+.submit-btn, .signup-btn {
     width: 150px;
     text-align: center;
     align-self: center;
@@ -201,6 +204,14 @@ p {
     transition: background-color 200ms ease-in-out;
 }
 
+.signup-btn {
+    background:
+        linear-gradient(#9dd1ff, transparent),
+        linear-gradient(to top left, rgb(233, 136, 228), transparent),
+        linear-gradient(to top right, #9dd1ff, transparent);
+    background-blend-mode: screen;
+    color:white
+}
 
 .title {
     color: white;

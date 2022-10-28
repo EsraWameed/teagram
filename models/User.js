@@ -16,6 +16,10 @@ User.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        image_profile:{
+            type:DataTypes.STRING,
+            allowNull:true,
+        },
         firstName: {
             type: DataTypes.STRING,
             allowNull: false,

@@ -83,7 +83,7 @@ app.post("", async (req, res)=>{
   uploadPath = __dirname + "/public/upload/" + sampleFile.name;
   //console log to see what object looks like
   console.log(sampleFile);
-  const userData = await User.update({profile_image:`/upload/${sampleFile.name}`},{
+  const userData = await User.update({image_profile:`/upload/${sampleFile.name}`},{
       where:{"id":1}});
   //use mv() to place file on server. grab sampleFile object and pass the path
   

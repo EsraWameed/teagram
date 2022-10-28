@@ -1,12 +1,12 @@
 <section class="feed-page">
     <h1>YOUR FEED</h1>
     <input class="search-bar" type="text" placeholder="Search">
-    {{#each rows}}
+    {{#each posts}}
 
         <div class="feed">
             <article class="posts">
-                <h2>{{this.user}}</h2>
-                <img class="user-post" src={{this.image_address}}>
+                <h2>{{this.username}}</h2>
+                <img class="user-post" src={{this.image_post}}>
                 <p class="caption">{{this.caption}}</p>
                 <img class="like-btn" src="public/images/heart-icon.png">
             </article>

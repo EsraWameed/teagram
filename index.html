@@ -47,20 +47,23 @@
         <div class="feed">
             <article class="posts">
                 <h2>USER</h2>
-                <img src="develop/images/scenery.png">
-                <button class="like-btn">LIKE</button>
+                <img class="user-post" src="develop/images/scenery.png">
+                <p class="caption">CAPTION</p>
+                <img class="like-btn" src="develop/images/heart-icon.png">
             </article>
     
             <article class="posts">
                 <h2>USER</h2>
-                <img src="develop/images/scenery.png">
-                <button class="like-btn">LIKE</button>
+                <img class="user-post" src="develop/images/scenery.png">
+                <p class="caption">CAPTION</p>
+                <img class="like-btn" src="develop/images/heart-icon.png">
             </article>
     
             <article class="posts">
                 <h2>USER</h2>
-                <img src="develop/images/scenery.png">
-                <button class="like-btn">LIKE</button>
+                <img class="user-post" src="develop/images/scenery.png">
+                <p class="caption">CAPTION</p>
+                <img class="like-btn" src="develop/images/heart-icon.png">
             </article>
         </div>
     </section>
@@ -80,9 +83,9 @@
                 <img class="change-profile" src="develop/images/profile-icon.pmg.png">
 
 			    <div class="container" style="background-color:#f1f1f1">
-				    <input type="text" placeholder="Username" name="uname" required>
+				    <input type="text" placeholder="Username" name="username" required>
 
-				    <input type="password" placeholder="Password" name="psw" required>
+				    <input type="password" placeholder="Password" name="password" required>
 
                     <input type="text" placeholder="Bio" name="psw" required>
 			    </div>
@@ -104,19 +107,9 @@
 			    </div>
 
 			    <div class="container" style="background-color:#f1f1f1">
-				    <button class="submit-btn" type="submit">Upload Media</button>
+                    <input id="post-caption" type="text" placeholder="Caption">
+				    <button class="submit-btn" type="submit">Post</button>
 			    </div>
 		    </form>
 	    </div>
     </section>
-
-
-
-    <footer>
-        @TEAGRAM
-    </footer>
-
-    <script src="develop/js/script.js"></script>
-
-</body>
-</html>

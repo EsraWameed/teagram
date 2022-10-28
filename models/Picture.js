@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Picture extends Model {}
+class Picture extends Model { }
 
 Picture.init(
   {
@@ -11,14 +11,9 @@ Picture.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    type: {
+    image_post: {
       type: DataTypes.STRING,
-    },
-    name: {
-      type: DataTypes.STRING,
-    },
-    data: {
-      type: DataTypes.BLOB("long"),
+      allowNull: true,
     },
     caption: {
       type: DataTypes.STRING,

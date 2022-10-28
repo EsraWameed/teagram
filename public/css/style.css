@@ -34,7 +34,7 @@ body {
     bottom: 0;
     right: 0;
     opacity: 1;
-    background-image: url(/develop/images/teagram-background.jpeg);
+    background-image: url(/public/images/teagram-background.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

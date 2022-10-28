@@ -1,44 +1,48 @@
 <section class="user-page">
-        <h1>{{this.username}}</h1>
-        <img class="view-profile" onclick="document.getElementById('profile-page').style.display='block'" src="develop/images/profile-icon.pmg.png">
+    <h1>{{this.username}}</h1>
+    <img class="view-profile" onclick="document.getElementById('profile-page').style.display='block'" src="public/images/profile-icon.pmg.png">
 
-        <img class="add-post" onclick="document.getElementById('upload-page').style.display='block'" src="develop/images/white-plus-icon.png">
+    <img class="add-post" onclick="document.getElementById('upload-page').style.display='block'" src="public/images/white-plus-icon.png">
 
-        <div id="profile-page" class="modal">
+    <div id="profile-page" class="modal">
 
-		    <form class="modal-content animate" >
-				<span onclick="document.getElementById('profile-page').style.display='none'" class="close">&times;</span>
-				<h1 class="title">{{this.username}}</h1>
-                <img class="change-profile" src="develop/images/profile-icon.pmg.png">
+		<form class="modal-content animate" >
+			<span onclick="document.getElementById('profile-page').style.display='none'" class="close">&times;</span>
+			<h1 class="title">{{this.username}}</h1>
+            <label  for="upload-file"><img class="change-profile" src="public/images/profile-icon.pmg.png">
+            </label>
+            <input type="file" id="upload-file">
 
-			    <div class="container" style="background-color:#f1f1f1">
-				    <input type="text" placeholder={{this.username}} name="username">
+			<div class="container" style="background-color:#f1f1f1">
+				<input type="text" placeholder={{this.username}} name="username" required>
 
-				    <input type="password" placeholder="Password" name="password">
+				<input type="password" placeholder="Password" name="password" required>
 
-                    <input type="text" placeholder={{this.bio}} name="psw">
-			    </div>
+                <input type="text" placeholder={{this.bio}} name="psw" required>
+			</div>
 
-			    <div class="container" style="background-color:#f1f1f1">
-				    <button class="submit-btn" type="submit">Update Profile</button>
-			    </div>
-		    </form>
-	    </div>
+			<div class="container" style="background-color:#f1f1f1">
+				<button class="submit-btn" type="submit">Update Profile</button>
+			</div>
+		</form>
+	</div>
 
-        <div id="upload-page" class="modal">
+    <div id="upload-page" class="modal">
 
-		    <form class="modal-content animate" >
-				<span onclick="document.getElementById('upload-page').style.display='none'" class="close">&times;</span>
-				<h1 class="title">UPLOAD MEDIA</h1>
+		<form class="modal-content animate" >
+			<span onclick="document.getElementById('upload-page').style.display='none'" class="close">&times;</span>
+			<h1 class="title">UPLOAD MEDIA</h1>
 
-			    <div class="container" style="background-color:#f1f1f1">
-				    <img class="upload-icon" src="develop/images/upload-icon.png">
-			    </div>
+			<div class="container" style="background-color:#f1f1f1">
+                <label  for="upload-file"><img class="upload-icon" src="public/images/upload-icon.png"></label>
+                <input type="file" id="upload-file">
+				    
+			</div>
 
-			    <div class="container" style="background-color:#f1f1f1">
-                    <input id="post-caption" type="text" placeholder="Caption">
-				    <button class="submit-btn" type="submit">Post</button>
-			    </div>
-		    </form>
-	    </div>
+			<div class="container" style="background-color:#f1f1f1">
+                <input id="post-caption" type="text" placeholder="Caption">
+				<button class="submit-btn" type="submit">Post</button>
+			</div>
+		</form>
+	</div>
 </section>

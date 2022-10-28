@@ -5,10 +5,10 @@
 
         <div class="feed">
             <article class="posts">
-                <h2>{{this.username}}</h2>
-                <img class="user-post" src={{this.image_post}}>
+                <h2>{{this.user.username}}</h2>
+                <img class="user-post" src="{{this.image_post}}">
                 <p class="caption">{{this.caption}}</p>
-                <img class="like-btn" src="public/images/heart-icon.png">
+                <img class="like-btn" src="/images/heart-icon.png">
             </article>
         </div>
     {{/each}}

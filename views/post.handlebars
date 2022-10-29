@@ -1,0 +1,35 @@
+{{!-- {{#each posts as |post| }}
+<div class="justify-content-center post-content">
+    <div class="post-title">
+        <h2>
+            <a href="/dashboard/editPost/{{post.id}}">
+                {{post.title}}
+            </a>
+        </h2>
+        <p>Created by {{user.name}} on {{format_date post.date_created}}</p>
+
+    </div>
+    <div class="post-description">
+        <p>
+            {{post.description}}
+        </p>
+    </div>
+</div>
+{{/each}} --}}
+
+<section class="feed-page">
+    <h1>MY PAGE</h1>
+    {{#each posts}}
+
+    <div class="feed">
+        <article class="posts">
+            <h2>{{this.user.username}}</h2>
+            <a href="/post/{{this.id}}">
+                <img  src="../controllers/resource/upload/{{this.image_post}}" alt="posted image">
+            </a>
+
+            <p class="caption">{{this.caption}}</p>
+        </article>
+    </div>
+    {{/each}}
+</section>

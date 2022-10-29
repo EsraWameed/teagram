@@ -17,7 +17,8 @@ Picture.init(
     },
     caption: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue:'image',
     },
     date_created: {
       type: DataTypes.DATE,

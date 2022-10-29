@@ -129,9 +129,9 @@ body {
     width: 15%;
 }
 
-input[type="file"] {
+/* input[type="file"] {
     display:none;
-}
+} */
 
 footer {
     text-align: center;
@@ -183,9 +183,11 @@ input {
 }
 
 p {
-    color:white;
+    color:rgb(0, 0, 0);
     margin-bottom:0px;
 }
+
+
 
 /*set a style for the buttons*/
 .submit-btn {

@@ -1,0 +1,22 @@
+{{!-- <form id="new-post">
+    <div>
+        <label class="form-label">Title:</label>
+        <br>
+        <input class="form-input" type="text" id="post-title" />
+    </div>
+    <div>
+        <label class="form-label">Description:</label>
+        <br>
+        <textarea class="form-textarea form-input" id="post-body" data-number="8"></textarea>
+    </div>
+
+    <button class="btn btn-primary post-btn">add post</button>
+    <br>
+</form>
+<script src="/js/newPost.js"></script> --}}
+
+<form action="/dashboard" method="post" enctype="multipart/form-data">
+    <h1>Upload Photo</h1>
+    <input type="file" name="sampleFile" accept="image/*" class="btn btn-primary"/>
+    <input type="submit" class="btn btn-primary">
+</form>

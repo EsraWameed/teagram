@@ -15,9 +15,33 @@ router.get('/', async (req, res) => {
 
         // Serialize data so the template can read it
         const posts = PostData.map((project) => project.get({ plain: true }));
-
+        console.log(posts);
         // Pass serialized data and session flag into template
         res.render('homepage', {
+            posts,
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/post/:id', async (req, res) => {
+    try {
+        const postData = await Picture.findOne({
+            where: { id: req.params.id },
+            include: [
+                { model: User, attributes: ['username'] },
+                {
+                    model: Comment,
+                    include: [User]
+                },
+            ],
+        });
+
+        const posts = postData.get({ plain: true });
+
+        res.render('post-comment', {
             posts,
             loggedIn: req.session.loggedIn
         });

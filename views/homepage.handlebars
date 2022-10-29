@@ -1,0 +1,16 @@
+<section class="feed-page">
+    <h1>YOUR FEED</h1>
+    {{#each posts}}
+
+    <div class="feed">
+        <article class="posts">
+            <h2>{{this.user.username}}</h2>
+            <a href="/post/{{this.id}}">
+                <img class="user-post" src="{{this.image_post}}">
+            </a>
+
+            <p class="caption">{{this.caption}}</p>
+        </article>
+    </div>
+    {{/each}}
+</section>

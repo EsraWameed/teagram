@@ -1,22 +1,26 @@
-{{!-- {{#each posts as |post| }}
-<div class="justify-content-center post-content">
-    <div class="post-title">
-        <h2>
-            <a href="/dashboard/editPost/{{post.id}}">
-                {{post.title}}
-            </a>
-        </h2>
-        <p>Created by {{user.name}} on {{format_date post.date_created}}</p>
+{{!-- <section>
+    <div class="card">
+
+        <img class="card__image" src="{{this.user.image_profile}}" alt="User Profile">
+
+        <h1 class="card__title">{{this.user.username}}</h1>
 
     </div>
-    <div class="post-description">
-        <p>
-            {{post.description}}
-        </p>
+</section> --}}
+<section>
+    {{#each posts}}
+    <div class="card">
+        {{#if this.user.image_profile}}
+        <img class="" src="{{this.user.image_profile}}" alt="User Profile">
+        {{else}}
+        <img class="" src="/upload/default.png" alt="User Profile">
+        {{/if}}
+        <h5 class="">username: {{this.user.username}}</h5>
+        <h5 class="">first name: {{this.user.first_name}}</h5>
+        <h5 class="">last name: {{this.user.last_name}}</h5>
     </div>
-</div>
-{{/each}} --}}
-
+    {{/each}}
+</section>
 <section class="feed-page">
     <h1>MY PAGE</h1>
     {{#each posts}}

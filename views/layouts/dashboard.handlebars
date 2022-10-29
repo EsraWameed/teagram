@@ -22,15 +22,20 @@
             <a href="/login">Dashboard</a>
             {{/if}}
             <a href="#" id="logout">Logout</a>
+            
         </div>
     </header>
     <main>
-        
+        <div id="create-post">
+            <a href="/userimage/profileimg" class="create-post">Upload a profile image</a>
+        </div>
+
         {{{body}}}
+
         <div id="create-post">
             <a href="/dashboard/newPost" class="create-post">Create a Post</a>
         </div>
-        
+
     </main>
     <script src="/js/logout.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

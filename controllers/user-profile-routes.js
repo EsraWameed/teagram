@@ -1,24 +1,44 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Picture } = require('../models');
 
-router.get("/", async (req, res) => {
-    try {
-        const userData = await User.findOne({
-            where:{id: req.session.user_id}
+// router.get("/", async (req, res) => {
+//     try {
+//         const userData = await User.findAll({
+//             where:{"id": req.session.user_id},
+//         });
+
+//         const users = userData.map((project) => project.get({ plain: true }));
+//         console.log(users);
+
+//         res.render("profileimg", {
+//             layout: 'dashboard',
+//             users,
+//             loggedIn: req.session.loggedIn,
+//         });
+//     } catch (err) {
+//         res.status(500).json(err)
+//     }
+
+// });
+
+router.get('/profileimg', async (req, res) => {
+    try{
+        const userData = await User.findAll({
+            where:{"id": req.session.user_id},
         });
 
-        const users = userData.map((project) => project.get({ plain: true }));
-        console.log(users);
-
-        res.render("profileimg", {
+        const userImg = userData.map(d => d.get({plain:true}));
+        
+        // res.status(200).json(userImg);
+        res.render('profileimg', {
             layout: 'dashboard',
-            users,
+            userImg,
             loggedIn: req.session.loggedIn,
         });
-    } catch (err) {
-        res.status(500).json(err)
+        console.log(userImg);
+    }catch(err){
+        res.status(500).json(err);
     }
-
 });
 
 ////////////
@@ -40,9 +60,8 @@ router.post("/", async (req, res) => {
     uploadPath = __dirname + "/resource/upload/" + sampleFile.name;
     //console log to see what object looks like
     console.log(sampleFile.name);
-    const userData = await User.update({
-        image_profile: `/upload/${sampleFile.name}`},{
-        where:{id: req.session.user_id},
+    const userData = await User.update({ image_profile: `/upload/${sampleFile.name}` }, {
+        where: { "id": req.session.user_id }
     });
     //use mv() to place file on server. grab sampleFile object and pass the path
 
@@ -70,10 +89,10 @@ router.post("/", async (req, res) => {
 
 ////////////
 
-router.get('/profileimg', (req, res) => {
-    res.render('profileimg', {
-        layout: 'dashboard'
-    });
-});
+// router.get('/profileimg', (req, res) => {
+//     res.render('profileimg', {
+//         layout: 'dashboard'
+//     });
+// });
 
 module.exports = router;

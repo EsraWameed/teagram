@@ -80,6 +80,7 @@ router.post("/", async (req, res) => {
     const userData = await Picture.create({
         image_post: `/upload/${sampleFile.name}`,
         user_id: req.session.user_id,
+        caption: req.body.caption,
     });
     //use mv() to place file on server. grab sampleFile object and pass the path
     // console.log(userData);

@@ -23,24 +23,24 @@ router.get('/', async (req, res) => {
 });
 
 //create a post
-router.post('/',  async (req, res) => {
-    try {
-        const newPost = await Post.create({
-            ...req.body,
-            user_id: req.session.user_id,
-        });
+// router.post('/',  async (req, res) => {
+//     try {
+//         const newPost = await Post.create({
+//             ...req.body,
+//             user_id: req.session.user_id,
+//         });
 
-        res.status(200).json(newPost);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
+//         res.status(200).json(newPost);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
 
 
 //update  a post
 router.put('/:id', async (req, res) => {
     try {
-        const postData = await Post.update(req.body, {
+        const postData = await Picture.update(req.body, {
             where: {
                 id: req.params.id,
             },
@@ -57,10 +57,10 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-//delete a post
+//delete a picture
 router.delete('/:id', async (req, res) => {
     try {
-        const postData = await Post.destroy({
+        const postData = await Picture.destroy({
             where: {
                 id: req.params.id,
                 user_id: req.session.user_id,

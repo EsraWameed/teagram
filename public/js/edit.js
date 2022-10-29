@@ -1,13 +1,11 @@
 const editPost = async function(event){
     event.preventDefault();
-    const title = document.querySelector('#edit-post-title').value.trim();
-    const description = document.querySelector('#edit-post-body').value.trim();
+    const caption = document.querySelector('#edit-post-caption').value.trim();
     const id =document.querySelector('#post-id-hidden').value.trim();
-    const response = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/pictures/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
-            title,
-            description,
+            caption,
         }),
         headers: { 'Content-Type': 'application/json' },
     });
@@ -23,7 +21,7 @@ const deletePost = async function(event){
     event.preventDefault();
     
     const id =document.querySelector('#post-id-hidden').value.trim();
-    const response = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/pictures/${id}`, {
         method: 'DELETE',
     });
 

@@ -1,0 +1,26 @@
+<!--action: we want to post on the home page -->
+<form action="/" method="post" enctype="multipart/form-data">
+    <h1>Upload Photo</h1>
+    <input type="file" name="sampleFile" accept="image/*" />
+    <input type="submit" class="btn btn-primary">
+</form>
+
+<!--card to display data in -->
+<div class="card">
+    <!--set up default image -->
+        <!--make a loop with handlebars-->
+    {{#each users}}
+    <!--write an if statement to set default image if user has none -->
+{{#if this.image_profile}}
+    <!--populate image source from the one from db from upload folder -->
+
+    <img class="card__image" src="{{this.image_profile}}" alt="User Profile">
+        <!--if no image -->
+    {{else}}
+    <img class="card__image" src="/images/default.png" alt="User Profile">
+{{/if}}
+    <h1 class="card__title">{{this.username}}</h1>
+    
+    <button type="button" class="btn btn-primary">View Profile</button>
+    {{/each}}
+</div>

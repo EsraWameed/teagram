@@ -60,6 +60,7 @@ body {
     color: rgb(232, 223, 223);
     margin: 120px 0px 40px;
     font-size: 50px;
+    margin-left: 9%;
 }
 
 .user-page h1 {
@@ -73,11 +74,15 @@ body {
 
 .feed {
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    margin-left: 10%;
 }
 
+label {
+    color: white;
+}
 
 .contact {
     height: 50vh;
@@ -94,6 +99,8 @@ body {
     text-align: center;
     align-items: center;
     border-radius: 6%;
+    margin-top: 8%;
+
 }
 
 .like-btn {
@@ -107,6 +114,32 @@ body {
     width: 270px;
     margin-bottom: 30px;
 }
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%; 
+  width: 200px; 
+  position: fixed; 
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  background-color: #9dd1ff; 
+  overflow-x: hidden;
+}
+
+.sidebar img {
+    width: 15%;
+    cursor: pointer;
+}
+
+.sidebar h1 {
+    font-size: 26px;
+    color: white;
+}
+
 
 .login-btn {
     position: relative;
@@ -190,7 +223,7 @@ p {
 
 
 /*set a style for the buttons*/
-.submit-btn {
+.submit-btn, .signup-btn {
     width: 150px;
     text-align: center;
     align-self: center;
@@ -203,6 +236,14 @@ p {
     transition: background-color 200ms ease-in-out;
 }
 
+.signup-btn {
+    background:
+        linear-gradient(#9dd1ff, transparent),
+        linear-gradient(to top left, rgb(233, 136, 228), transparent),
+        linear-gradient(to top right, #9dd1ff, transparent);
+    background-blend-mode: screen;
+    color:white
+}
 
 .title {
     color: white;
@@ -265,6 +306,11 @@ span.psw {
     color: white;
     font-size: 35px;
     font-weight: bold;
+}
+
+input:focus {
+    outline: #9dd1ff;
+    border: none;
 }
 
 .close:hover,

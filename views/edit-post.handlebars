@@ -1,0 +1,17 @@
+<form id="edit-form">
+    
+    <div>
+        <label class="form-label">Caption:</label>
+        <br>
+        <input class="form-input" type="text" id="edit-post-caption"/>
+    
+        <input type="hidden" value="{{posts.id}}" id="post-id-hidden">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Add Caption</button>
+</form>
+<div class="delete-btn">
+    <button class="btn btn-primary" type="click" id="delete-btn">Delete Post</button>
+</div>
+
+<script src="/js/edit.js"></script>

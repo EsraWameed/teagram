@@ -1,0 +1,39 @@
+{{!-- <section>
+    <div class="card">
+
+        <img class="card__image" src="{{this.user.image_profile}}" alt="User Profile">
+
+        <h1 class="card__title">{{this.user.username}}</h1>
+
+    </div>
+</section> --}}
+<section>
+    {{#each posts}}
+    <div class="card">
+        {{#if this.user.image_profile}}
+        <img class="" src="{{this.user.image_profile}}" alt="User Profile">
+        {{else}}
+        <img class="" src="/upload/default.png" alt="User Profile">
+        {{/if}}
+        <h5 class="">username: {{this.user.username}}</h5>
+        <h5 class="">first name: {{this.user.first_name}}</h5>
+        <h5 class="">last name: {{this.user.last_name}}</h5>
+    </div>
+    {{/each}}
+</section>
+<section class="feed-page">
+    <h1>MY PAGE</h1>
+    {{#each posts}}
+
+    <div class="feed">
+        <article class="posts">
+            <h2>{{this.user.username}}</h2>
+            <a href="/dashboard/editPost/{{this.id}}">
+                <img class="user-post" src="{{this.image_post}}" alt="posted image">
+            </a>
+
+            <p class="caption">{{this.caption}}</p>
+        </article>
+    </div>
+    {{/each}}
+</section>

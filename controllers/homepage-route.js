@@ -26,6 +26,30 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/post/:id', async (req, res) => {
+    try {
+        const postData = await Picture.findOne({
+            where: { id: req.params.id },
+            include: [
+                { model: User, attributes: ['username'] },
+                {
+                    model: Comment,
+                    include: [User]
+                },
+            ],
+        });
+
+        const posts = postData.get({ plain: true });
+
+        res.render('post-comment', {
+            posts,
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.loggedIn) {

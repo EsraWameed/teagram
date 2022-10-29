@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Tech Blog</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -16,26 +16,28 @@
     <header>
         <div class="jumbotron jumbotron-fluid">
             <a href="/">Home</a>
-
             {{#if loggedIn}}
             <a href="/dashboard">Dashboard</a>
-            <a href="#" id="logout">Logout</a>
-            
             {{else}}
             <a href="/login">Dashboard</a>
-            <a href="/login">Login</a>
             {{/if}}
+            <a href="#" id="logout">Logout</a>
+            
         </div>
-
     </header>
     <main>
+        <div id="create-post">
+            <a href="/userimage/profileimg" class="create-post">Upload a profile image</a>
+        </div>
+
         {{{body}}}
+
+        <div id="create-post">
+            <a href="/dashboard/newPost" class="create-post">Create a Post</a>
+        </div>
+
     </main>
-
-    {{#if loggedIn}}
     <script src="/js/logout.js"></script>
-    {{/if}}
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -43,5 +45,7 @@
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
 </body>
+
+
 
 </html>

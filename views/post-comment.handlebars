@@ -1,0 +1,44 @@
+
+
+<section class="feed-page">
+    <h1>POST</h1>
+    <input type="hidden" value="{{posts.id}}" id="post-id-hidden-comment">
+    <input type="hidden" value="{{users.id}}" id="user-id-hidden-comment">
+
+    <div class="feed">
+        <article class="posts">
+            <h2>{{posts.user.username}}</h2>
+            <img class="user-post" src="{{posts.image_post}}">
+            <p class="caption">{{posts.caption}}</p>
+        </article>
+    </div>
+</section>
+
+
+
+<div class="comment-content">
+    <div>
+        <h2>Comments:</h2>
+    </div>
+
+    <p id="comments-text">
+        {{> comment posts.comments}}
+    </p>
+</div>
+
+
+
+<div class="comment-content">
+    {{#if loggedIn}}
+    <form id="comment-form">
+        <label class="form-label">Comment:</label>
+        <br>
+        <textarea class="form-textarea form-input" id="add-comment"></textarea>
+        <br>
+        <button class="btn btn-primary" type="submit">comment</button>
+    </form>
+    {{else}}
+    <a href="/login" class="login-to-comment">Login to comment</a>
+    {{/if}}
+</div>
+<script src="/js/comment.js"></script>

@@ -19,6 +19,7 @@ User.init(
         image_profile:{
             type:DataTypes.STRING,
             allowNull:true,
+            defaultValue: '/upload/default.png',
         },
         firstName: {
             type: DataTypes.STRING,

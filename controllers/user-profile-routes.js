@@ -1,24 +1,25 @@
 const router = require('express').Router();
 const { User } = require('../models');
 
-// router.get("/", async (req, res) => {
-//     try {
-//         const userData = await User.findAll({
-//             where: { "id": 1 }
-//         });
+router.get("/", async (req, res) => {
+    try {
+        const userData = await User.findOne({
+            where:{id: req.session.user_id}
+        });
 
-//         const userImg = userData.map((project) => project.get({ plain: true }));
-//         console.log(userImg);
-        
-//         res.render("profileimg", {
-//             userImg,
-//             loggedIn: req.session.loggedIn,
-//         });
-//     } catch (err) {
-//         res.status(500).json(err)
-//     }
+        const users = userData.map((project) => project.get({ plain: true }));
+        console.log(users);
 
-// });
+        res.render("profileimg", {
+            layout: 'dashboard',
+            users,
+            loggedIn: req.session.loggedIn,
+        });
+    } catch (err) {
+        res.status(500).json(err)
+    }
+
+});
 
 ////////////
 router.post("/", async (req, res) => {
@@ -38,9 +39,10 @@ router.post("/", async (req, res) => {
     //add code to remove. timestap function --> current# as uploadname
     uploadPath = __dirname + "/resource/upload/" + sampleFile.name;
     //console log to see what object looks like
-    console.log(sampleFile);
-    const userData = await User.update({ image_profile: `/upload/${sampleFile.name}` }, {
-        where: { "id": req.session.user_id }
+    console.log(sampleFile.name);
+    const userData = await User.update({
+        image_profile: `/upload/${sampleFile.name}`},{
+        where:{id: req.session.user_id},
     });
     //use mv() to place file on server. grab sampleFile object and pass the path
 
@@ -52,7 +54,7 @@ router.post("/", async (req, res) => {
         router.put("/", async (req, res) => {
             try {
                 userData.map((project) => project.get({ plain: true }));
-                document.location.reload()
+                // document.location.reload()
             }
             catch (err) {
                 res.status(500).json(err)
@@ -62,7 +64,7 @@ router.post("/", async (req, res) => {
     })
 
 
-    res.redirect('/dashboard');
+    res.redirect('/userimage/profileimg');
 
 });
 

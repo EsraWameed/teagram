@@ -1,15 +1,20 @@
 <section class="feed-page">
-    <h1>YOUR FEED</h1>
-    <input class="search-bar" type="text" placeholder="Search">
+    <aside class="sidebar">
+        <h1>TEAGRAM</h1>
+        <img src="/images/home-icon.png">
+        <img src="/images/search-icon.png">
+        <img src="{{this.user.profile}}">
+    </aside>
     {{#each posts}}
 
-        <div class="feed">
+    <div class="feed">
             <article class="posts">
-                <h2>{{this.user.username}}</h2>
-                <img class="user-post" src="{{this.image_post}}">
-                <p class="caption">{{this.caption}}</p>
-                <img class="like-btn" src="/images/heart-icon.png">
-            </article>
-        </div>
+            <h2>{{this.user.username}}</h2>
+            <img class="user-post" src="{{this.image_post}}">
+            <p class="caption">{{this.caption}}</p>
+            <img class="like-btn" src="/images/heart-icon.png">
+        </article>
+    </div>
     {{/each}}
 </section>
+

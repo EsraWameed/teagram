@@ -35,31 +35,14 @@ app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
+app.use(express.static("public"));
+app.use(express.static('controllers/resource'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static("public"));
+
 app.use(routes);
 
-
-//////////
-// app.get("/dashboard", async (req, res) => {
-//   try {
-//       const userData = await User.findAll({
-//           where: { "id": 1 }
-//       })
-
-//       const users = userData.map((project) => project.get({ plain: true }));
-//       console.log(users)
-//       res.render("profileimg", {
-//           users
-//       })
-//   } catch (err) {
-//       res.status(500).json(err)
-//   }
-// })
-////////
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));

@@ -78,7 +78,7 @@ router.post("/", async (req, res) => {
     //console log to see what object looks like
     console.log(sampleFile.name);
     const userData = await Picture.create({
-        image_post: `../controllers/resource/upload/${sampleFile.name}`,
+        image_post: `/upload/${sampleFile.name}`,
         user_id: req.session.user_id,
     });
     //use mv() to place file on server. grab sampleFile object and pass the path
@@ -88,9 +88,9 @@ router.post("/", async (req, res) => {
 
         // if file is rendered, display a message
         router.put("/", async (req, res) => {
-            console.log("hello")
+            
             try {
-                console.log("hellooo")
+                
                 userData.map((project) => project.get({ plain: true }));
                 // document.location.reload()
             }

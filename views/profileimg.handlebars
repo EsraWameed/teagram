@@ -3,17 +3,15 @@
     <input type="file" name="sampleFile" accept="image/*" />
     <input type="submit" class="btn btn-primary">
 </form>
-<div>
-    <h1>hello world</h1>
-</div>
+
 
 
 <section>
     
     <div class="card">
-        {{!-- {{#each users}} --}}
-        <img class="" src="{{users.image_profile}}" alt="User Profile">
-        {{!-- {{/each}} --}}
+        {{#each userImg}}
+        <img class="" src="{{this.image_profile}}" alt="User Profile">
+        {{/each}}
         
     </div>
     

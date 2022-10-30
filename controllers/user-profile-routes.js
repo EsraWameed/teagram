@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Picture } = require('../models');
-
+const withAuth = require('../utils/auth');
 // router.get("/", async (req, res) => {
 //     try {
 //         const userData = await User.findAll({
@@ -42,7 +42,7 @@ router.get('/profileimg', async (req, res) => {
 });
 
 ////////////
-router.post("/", async (req, res) => {
+router.post("/",withAuth, async (req, res) => {
     //start writing the upload functionality
     //creare a variable name that will hold the file
     //keep consistent with form and call it sampleFile

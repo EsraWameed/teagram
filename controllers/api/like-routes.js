@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Like, User } = require('../../models');
-
+const withAuth = require('../../utils/auth');
 router.get('/', async (req, res) => {
     try {
         const newLike = await Like.findAll({ include: [User], });
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 
 //Create a comment
 
-router.post('/', async (req, res) => {
+router.post('/',withAuth, async (req, res) => {
     try {
         const newLike = await Like.create({
             ...req.body,

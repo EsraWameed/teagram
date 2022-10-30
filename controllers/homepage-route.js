@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Picture, User, Comment } = require('../models');
+const { Picture, User, Comment, Like } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
@@ -36,6 +36,10 @@ router.get('/post/:id', async (req, res) => {
                     model: Comment,
                     include: [User]
                 },
+                {
+                    model: Like, 
+                    include: [User]
+                }
             ],
         });
 

@@ -1,0 +1,145 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white
+}
+
+h1 {
+    margin-top: 100px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+
+
+#logo {
+    align-self: center;
+    width: 5%;
+}
+
+/* The image lnked below is displayed as the background image */
+
+.second-content {
+    display:flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    height: 100vh;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+}
+
+
+.third-content {
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.third-content{
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+    background-image: url('https://as2.ftcdn.net/v2/jpg/02/87/24/95/1000_F_287249541_Ui4Iqyp4ggPSuHg89yvvEWsB4ksH9jYT.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+} 
+
+.fourth-content {
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+.examples {
+    display: flex;
+    flex-direction: row;
+    margin-top: 150px;
+    margin-left: 300px;
+    align-items: center;
+}
+
+.examples img {
+    width: 30%;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+footer {
+    margin: 30px 0px 50px;
+    color: #9dd1ff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.footer {
+    height: 50vh;
+}
+
+.company, .text {
+    font-size: 300%;
+    font-weight: bolder;
+    position: relative;
+    text-align: center;
+    justify-self: center;
+    margin-top: 15%;
+}
+
+.text {
+    font-size: 1100%;
+    color: white;
+}
+
+#smiling {
+    width: 40%;
+}
+
+.signup-btn {
+    width: 150px;
+    text-align: center;
+    align-self: center;
+    background-color: white;
+    border: 1px solid #9dd1ff;
+    color: #ccc;
+    border-radius: 10%;
+    padding: 15px 15px;
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out;
+}
+
+.signup-btn:hover, .signup-btn:focus {
+    background:
+        linear-gradient(#9dd1ff, transparent),
+        linear-gradient(to top left, rgb(233, 136, 228), transparent),
+        linear-gradient(to top right, #9dd1ff, transparent);
+    background-blend-mode: screen;
+    color:white;
+    border: none;
+}
+
+@media (max-width:900px) {
+    .main-content::before {
+        background-attachment:local;
+    }
+    .third-content{
+        background-attachment: local;
+    } 
+    .second-content {
+        display:flex;
+        flex-wrap: wrap;
+        display: column;
+        height: 300vh;
+    }
+
+}

@@ -5,8 +5,8 @@
     
     <input type="hidden" value="{{posts.id}}" id="post-id-hidden-comment">
     <input type="hidden" value="{{users.id}}" id="user-id-hidden-comment">
-<h1>POST</h1>
-    <div class="feed">
+<h1 style="margin:0">POST</h1>
+    <div class="feed" style="margin:0">
         <article class="posts">
             <h2>{{posts.user.username}}</h2>
             <img class="user-post" src="{{posts.image_post}}">
@@ -15,7 +15,7 @@
                 <h5>Liked By:</h5>
                 <h6 id="like-status">{{>like posts.likes}}</h6>
                 {{#if loggedIn}}
-                <button type="button"  class="btn btn-primary" id="likebtn">Like</button>
+                <button type="button"  class="submit-btn" id="likebtn">Like</button>
                 {{/if}}
             </div>
         </article>
@@ -37,15 +37,16 @@
 
 
 
-<div class="comment-content">
+<div class="comment-content" style="margin-bottom:100px">
     {{#if loggedIn}}
     <form id="comment-form">
         <label class="form-label">Comment:</label>
         <br>
-        <textarea class="form-textarea form-input" id="add-comment"></textarea>
+        <textarea class="comment-box" id="add-comment"></textarea>
         <br>
-        <button class="btn btn-primary" type="submit">comment</button>
+        <button class="submit-btn" type="submit">comment</button>
     </form>
+
     {{else}}
     <a href="/login" class="login-to-comment">Login to comment and like</a>
     {{/if}}

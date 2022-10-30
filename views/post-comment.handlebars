@@ -1,5 +1,3 @@
-
-
 <section class="feed-page">
     <h1>POST</h1>
     <input type="hidden" value="{{posts.id}}" id="post-id-hidden-comment">
@@ -10,8 +8,16 @@
             <h2>{{posts.user.username}}</h2>
             <img class="user-post" src="{{posts.image_post}}">
             <p class="caption">{{posts.caption}}</p>
+            <div>
+                <h5>Liked By:</h5>
+                <h6 id="like-status">{{>like posts.likes}}</h6>
+                {{#if loggedIn}}
+                <button type="button"  class="btn btn-primary" id="likebtn">Like</button>
+                {{/if}}
+            </div>
         </article>
     </div>
+
 </section>
 
 
@@ -38,7 +44,7 @@
         <button class="btn btn-primary" type="submit">comment</button>
     </form>
     {{else}}
-    <a href="/login" class="login-to-comment">Login to comment</a>
+    <a href="/login" class="login-to-comment">Login to comment and like</a>
     {{/if}}
 </div>
 <script src="/js/comment.js"></script>

@@ -11,6 +11,7 @@
     <div class="card">
         {{#each userImg}}
         <img class="" src="{{this.image_profile}}" alt="User Profile">
+        <a href="{{this.image_profile}}" download="">Download</a>
         <h5>first name: {{this.firstName}}</h5>
         <h5>last name: {{this.lastName}}</h5>
         <h5>username: {{this.username}}</h5>

@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['username'],
+                    attributes: ['username','image_profile'],
                 },
             ],
         });
@@ -31,7 +31,7 @@ router.get('/post/:id', async (req, res) => {
         const postData = await Picture.findOne({
             where: { id: req.params.id },
             include: [
-                { model: User, attributes: ['username'] },
+                { model: User, attributes: ['username', 'image_profile'] },
                 {
                     model: Comment,
                     include: [User]

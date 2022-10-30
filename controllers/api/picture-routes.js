@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Picture } = require('../../models');
+const { Picture, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['username'],
+                    attributes: ['username', 'image_profile'],
                 },
             ],
         });

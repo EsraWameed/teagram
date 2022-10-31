@@ -464,11 +464,14 @@ input:focus {
     .sidebar img, .topbar img {
         width: 6%;
     }
-    .sidebar a {
-        text-align:unset;
-    }
     .sidebar h1 {
         display:none;
+    }
+    #home-icon {
+        margin-left:20%;
+    }
+    #logout-icon {
+        margin-right:20%;
     }
     #profile-btn {
         display:none;

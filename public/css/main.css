@@ -3,27 +3,19 @@ html {
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
 }
+
 img {
     margin-top: 5%;
     margin-bottom: 5%;
     width: 70%;
 }
 
-.preview-images {
-    background:
-        linear-gradient(#9dd1ff, transparent),
-        linear-gradient(to top left, rgb(233, 136, 228), transparent),
-        linear-gradient(to top right, #9dd1ff, transparent);
-    background-blend-mode: screen;
-    margin-top: 4%;
-    width: 60%;
+p {
+    color:black;
+    margin-bottom:0px;
 }
 
-.preview-profile {
-    margin-top: 4%;
-    
-}
-
+/*-------------------------------------------------------- StartPage Background Styling ----------------------------------------------*/
 .homepage {
     display:flex;
     flex-direction: column;
@@ -57,26 +49,19 @@ img {
     background-position: center;
 }
 
-.feed-page {
-    background-color: white;
-    height: auto;
-    margin-bottom: 100px;
+.title {
+    color: white;
+    text-align: center;
+    font-size: 250%;
 }
 
+/*-------------------------------------------------------- UserPage ----------------------------------------------*/
 .user-page {
     display:flex;
     flex-direction: column;
     background-color: #9dd1ff;
     height: auto;
     margin-bottom: 20px;
-}
-
-.feed-page h1, .user-page h1 {
-    text-align: center;
-    color: rgb(232, 223, 223);
-    margin: 120px 0px 40px;
-    font-size: 50px;
-    margin-left: 9%;
 }
 
 .user-page h1 {
@@ -87,6 +72,42 @@ img {
     font-size: 50px;
 }
 
+.user-post {
+    width: 70%;
+}
+
+.add-post {
+    width: 5%;
+    align-self: center;
+    margin-bottom: 100px;
+}
+
+/*assign full width inputs*/
+input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    display: inline-block;
+    border: 1px solid #9dd1ff;
+    box-sizing: border-box;
+    color: #ccc;
+    text-align: center;
+}
+
+/*-------------------------------------------------------- FeedPage ----------------------------------------------*/
+.feed-page {
+    background-color: white;
+    height: auto;
+    margin-bottom: 100px;
+}
+
+.feed-page h1, .user-page h1 {
+    text-align: center;
+    color: rgb(232, 223, 223);
+    margin: 120px 0px 40px;
+    font-size: 50px;
+    margin-left: 9%;
+}
 
 .feed {
     display:flex;
@@ -94,15 +115,6 @@ img {
     justify-content: space-evenly;
     align-items: center;
     margin-left: 10%;
-}
-
-label {
-    color: white;
-}
-
-.contact {
-    height: 50vh;
-    background-color: lightskyblue;
 }
 
 .posts {
@@ -116,11 +128,11 @@ label {
     align-items: center;
     border-radius: 6%;
     margin-top: 8%;
-
 }
 
-.like-btn {
-    width: 10%;
+.posts a {
+    text-decoration: none;
+    color: #9dd1ff
 }
 
 .caption {
@@ -131,10 +143,37 @@ label {
     margin-bottom: 30px;
 }
 
+label {
+    color: white;
+}
+
+.contact {
+    height: 50vh;
+    background-color: lightskyblue;
+}
+
+.like-btn {
+    width: 10%;
+}
+
+.comment-content {
+    text-align: center;
+}
+
+.comment-box {
+    height: 100px;
+    width: 20%;
+    border:2px solid #9dd1ff;
+    margin-bottom: 1%;
+}
+
+/*-------------------------------------------------------- TopBar ----------------------------------------------*/
+/* Display set to none, only displays in mobile view */
 .topbar {
     display: none;
 }
 
+/*-------------------------------------------------------- Sidebar ----------------------------------------------*/
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -168,17 +207,24 @@ label {
     color: white;
 }
 
-
 .login-btn {
     position: relative;
     align-self: center;
     width: 6%;
 }
 
+/*-------------------------------------------------------- Profile Page  ----------------------------------------------*/
 .view-profile {
     width: 6%;
     align-self: center;
     margin-bottom: 300px;
+}
+
+.view-profile {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    width:100%;
 }
 
 .change-profile {
@@ -190,7 +236,19 @@ label {
     flex-direction: column;
 }
 
+.preview-images {
+    background:
+        linear-gradient(#9dd1ff, transparent),
+        linear-gradient(to top left, rgb(233, 136, 228), transparent),
+        linear-gradient(to top right, #9dd1ff, transparent);
+    background-blend-mode: screen;
+    margin-top: 4%;
+    width: 60%;
+}
 
+.preview-profile {
+    margin-top: 4%;
+}
 .profile-img {
     width:10%;
     border: 5px solid rgb(232, 223, 223);
@@ -210,6 +268,7 @@ h5 {
     font-size: 120%;
 }
 
+/*-------------------------------------------------------- Download & Upload Styling ----------------------------------------------*/
 .upload-icon {
     width: 15%;
 }
@@ -227,94 +286,7 @@ footer {
     text-align: center;
 }
 
-.submit-btn:hover, .submit-btn:focus {
-    color:white;
-    background:
-        linear-gradient(#9dd1ff, transparent),
-        linear-gradient(to top left, rgb(233, 136, 228), transparent),
-        linear-gradient(to top right, #9dd1ff, transparent);
-    background-blend-mode: screen;
-    cursor: pointer;
-}
-
-.like-btn:hover, .like-btn:focus {
-    cursor: pointer;
-}
-
-.login-btn:hover, .login-btn:focus, .view-profile:hover, .view-profile:focus, .add-post:hover, .add-post:focus, .upload-icon:hover, .upload-icon:focus, .change-profile:hover, .change-profile:focus{
-    cursor: pointer;
-}
-
-.user-post {
-    width: 70%;
-}
-
-.add-post {
-    width: 5%;
-    align-self: center;
-    margin-bottom: 100px;
-}
-
-
-/*assign full width inputs*/
-input {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 20px 0;
-    display: inline-block;
-    border: 1px solid #9dd1ff;
-    box-sizing: border-box;
-    color: #ccc;
-    text-align: center;
-}
-
-
-p {
-    color:black;
-    margin-bottom:0px;
-}
-
-.about {
-    margin-top: 100px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.about a {
-    color:#888;
-}
-
-/*set a style for the buttons*/
-.submit-btn, .signup-btn {
-    width: 150px;
-    text-align: center;
-    align-self: center;
-    background-color: white;
-    border: 0.5px solid #9dd1ff;
-    color: #ccc;
-    border-radius: 10px;
-    padding: 15px 15px;
-    text-decoration: none;
-    transition: background-color 200ms ease-in-out;
-    cursor: pointer;
-}
-
-.signup-btn {
-    background:
-        linear-gradient(#9dd1ff, transparent),
-        linear-gradient(to top left, rgb(233, 136, 228), transparent),
-        linear-gradient(to top right, #9dd1ff, transparent);
-    background-blend-mode: screen;
-    color:white;
-    border: none;
-}
-
-.title {
-    color: white;
-    text-align: center;
-    font-size: 250%;
-}
-
+/*-------------------------------------------------------- Modal Styling ----------------------------------------------*/
 /*set padding to the container*/
 .container {
     display:flex;
@@ -362,23 +334,6 @@ span.psw {
     width: 30%;
 }
 
-.view-profile {
-    display:flex;
-    flex-direction: column;
-    text-align: center;
-    width:100%;
-}
-
-.comment-content {
-    text-align: center;
-}
-
-.comment-box {
-    height: 100px;
-    width: 20%;
-    border:2px solid #9dd1ff;
-    margin-bottom: 1%;
-}
 /*style the close button*/
 .close {
     position: absolute;
@@ -387,6 +342,51 @@ span.psw {
     color: white;
     font-size: 35px;
     font-weight: bold;
+}
+
+/*-------------------------------------------------------- Button Styling ----------------------------------------------*/
+.submit-btn, .signup-btn {
+    width: 150px;
+    text-align: center;
+    align-self: center;
+    background-color: white;
+    border: 0.5px solid #9dd1ff;
+    color: #ccc;
+    border-radius: 10px;
+    padding: 15px 15px;
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.signup-btn {
+    background:
+        linear-gradient(#9dd1ff, transparent),
+        linear-gradient(to top left, rgb(233, 136, 228), transparent),
+        linear-gradient(to top right, #9dd1ff, transparent);
+    background-blend-mode: screen;
+    color:white;
+    border: none;
+}
+
+/*-------------------------------------------------------- Transitions & Animation ----------------------------------------------*/
+.submit-btn:hover, .submit-btn:focus {
+    color:white;
+    background:
+        linear-gradient(#9dd1ff, transparent),
+        linear-gradient(to top left, rgb(233, 136, 228), transparent),
+        linear-gradient(to top right, #9dd1ff, transparent);
+    background-blend-mode: screen;
+    cursor: pointer;
+}
+
+.like-btn:hover, .like-btn:focus {
+    cursor: pointer;
+}
+
+.login-btn:hover, .login-btn:focus, .view-profile:hover, .view-profile:focus, .add-post:hover, .add-post:focus, 
+.upload-icon:hover, .upload-icon:focus, .change-profile:hover, .change-profile:focus {
+    cursor: pointer;
 }
 
 input:focus {
@@ -407,10 +407,6 @@ input:focus {
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
-}
-
-.posts a{
-    text-decoration: none;
 }
 
 @-webkit-keyframes animatezoom {
@@ -441,6 +437,7 @@ input:focus {
     }
 }
 
+/*-------------------------------------------------------- Mobile View ----------------------------------------------*/
 @media (max-width: 900px) {
     .company {
         font-size: 500%;
@@ -506,7 +503,6 @@ input:focus {
     .topbar {
         display: flex;
         flex-direction: row;
-        align-items: center;
         height: 6%; 
         width: 100%; 
         position: fixed; 
@@ -519,9 +515,15 @@ input:focus {
         background-blend-mode: screen;
         overflow: hidden;
     }
-    .topbar img {
+    .topbar a {
+        width: 100px;
         margin-right: 10%;
     }
+    .topbar a img{
+        width: 100px;
+        margin-right: 10%;
+    }
+
     .topbar h1 {
         font-size: 20px;
         color: white;

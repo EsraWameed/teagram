@@ -1,5 +1,21 @@
 <section class="feed-page">
-    <h1>YOUR FEED</h1>
+        <aside class="topbar">
+            <h1>TEAGRAM</h1>
+            <img src="/images/gallery-icon.png" onclick="document.getElementById('gallery-page').style.display='block'">
+            <img onclick="document.getElementById('profile-page').style.display='block'" src="/images/profile-icon.pmg.png">
+        </aside>
+
+        <aside class="sidebar">
+            <h1>TEAGRAM</h1>
+            <img id="home-icon"src="/images/home-icon.png">
+            <a href="/dashboard"><img id="gallery-btn" src="/images/gallery-icon.png"></a>
+            <img id="post-btn" onclick="document.getElementById('upload-page').style.display='block'" src="/images/white-plus-icon.png">
+            <a href="/userimage/profileimg"><img id="profile-btn" src="/images/profile-icon.pmg.png"></a>
+            <img id="logout-icon" onclick="document.getElementById('logout-page').style.display='block'" src="/images/logout-icon.png">
+        </aside>
+
+        
+  
     {{#each posts}}
 
     <div class="feed">
@@ -7,13 +23,67 @@
             <h2>{{this.user.username}}</h2>
             <a href="/post/{{this.id}}">
                 <img class="user-post" src="{{this.image_post}}">
-                <a href="{{this.image_post}}" download="">Download</a>
             </a>
-
             <p class="caption">{{this.caption}}</p>
+            <img class="like-btn" src="/images/heart-icon.png">
         </article>
     </div>
     {{/each}}
+
+
 </section>
+
+
+{{!-- <div id="gallery-page" class="modal">
+	<div class="upload-form animate">
+		<span onclick="document.getElementById('gallery-page').style.display='none'" class="close">&times;</span>
+		<h1 class="title">VIEW MY GALLERY</h1>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <a href="/dashboard">CLICK</a>
+        </div>
+	</div>
+</div> --}}
+
+<div id="upload-page" class="modal">
+	<div class="upload-form animate">
+		<span onclick="document.getElementById('upload-page').style.display='none'" class="close">&times;</span>
+		<h1 class="title">UPLOAD MEDIA</h1>
+
+        <form action="/dashboard" method="post" enctype="multipart/form-data">
+            <div class="container" style="background-color:#f1f1f1">
+                <label for="upload-file"><img class="upload-icon" src="/images/upload-icon.png"></label>
+                <input type="file" name="sampleFile" id="upload-file" accept="image/*">
+		    </div> 
+            <div class="container" style="background-color:#f1f1f1">
+                <input type="submit" class="submit-btn">
+            </div>
+        </form>
+	</div>
+</div>
+
+
+ {{!-- <div id="profile-page" class="modal">
+    <div class="profile-form animate">
+		<span onclick="document.getElementById('profile-page').style.display='none'" class="close">&times;</span>
+		<h1 class="title">UPLOAD MEDIA</h1>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <a href="/userimage/profileimg">CLICK</a>
+        </div>
+	</div>
+</div> --}}
+
+<div id="logout-page" class="modal">
+
+		<form class="profile-form animate" >
+			<span onclick="document.getElementById('logout-page').style.display='none'" class="close">&times;</span>
+			<h1 class="title">LOGOUT</h1>
+
+			<div class="container" style="background-color:#f1f1f1">
+				<button class="submit-btn" type="submit" id="logout">Confirm</button>
+			</div>
+		</form>
+</div>
 
 

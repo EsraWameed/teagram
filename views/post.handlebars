@@ -1,15 +1,11 @@
-{{!-- <section>
-    <div class="card">
-
-        <img class="card__image" src="{{this.user.image_profile}}" alt="User Profile">
-
-        <h1 class="card__title">{{this.user.username}}</h1>
-
-    </div>
-</section> --}}
+<aside class="sidebar">
+    <h1>TEAGRAM</h1>
+    <a href="/"><img src="/images/home-icon.png"></a>
+    <img onclick="document.getElementById('logout-page').style.display='block'" src="/images/logout-icon.png">
+</aside>
 
 <section class="feed-page">
-    <h1>MY PAGE</h1>
+    <h1>MY POSTS</h1>
     
     {{#each posts}}
     <div class="feed">
@@ -17,7 +13,7 @@
             <h2>{{this.user.username}}</h2>
             <a href="/dashboard/editPost/{{this.id}}">
                 <img class="user-post" src="{{this.image_post}}" alt="posted image">
-                <a href="{{this.image_post}}" download="">Download</a>
+                <a href="{{this.image_post}}" download=""><img class="download-icon" src="/images/download-icon.png"</a>
             </a>
 
             <p class="caption">{{this.caption}}</p>
@@ -25,3 +21,15 @@
     </div>
     {{/each}}
 </section>
+
+<div id="logout-page" class="modal">
+
+		<form class="profile-form animate" >
+			<span onclick="document.getElementById('logout-page').style.display='none'" class="close">&times;</span>
+			<h1 class="title">LOGOUT</h1>
+
+			<div class="container" style="background-color:#f1f1f1">
+				<button class="submit-btn" type="submit" id="logout">Confirm</button>
+			</div>
+		</form>
+</div>

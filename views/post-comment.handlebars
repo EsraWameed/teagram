@@ -1,12 +1,16 @@
 <section class="feed-page">
-    
-   <img src="{{posts.user.image_profile}}" alt="">
+    <aside class="sidebar">
+            <h1>TEAGRAM</h1>
+            <a href="/"><img src="/images/home-icon.png"></a>
+            <img onclick="document.getElementById('logout-page').style.display='block'" src="/images/logout-icon.png">
+        </aside>
+        
+   <img class="profile-img" src="{{posts.user.image_profile}}" alt="">
     
     
     <input type="hidden" value="{{posts.id}}" id="post-id-hidden-comment">
     <input type="hidden" value="{{users.id}}" id="user-id-hidden-comment">
-<h1>POST</h1>
-    <div class="feed">
+    <div class="feed" style="margin:0">
         <article class="posts">
             <h2>{{posts.user.username}}</h2>
             <img class="user-post" src="{{posts.image_post}}">
@@ -15,7 +19,7 @@
                 <h5>Liked By:</h5>
                 <h6 id="like-status">{{>like posts.likes}}</h6>
                 {{#if loggedIn}}
-                <button type="button"  class="btn btn-primary" id="likebtn">Like</button>
+                <button type="button"  class="submit-btn" id="likebtn">Like</button>
                 {{/if}}
             </div>
         </article>
@@ -37,17 +41,34 @@
 
 
 
-<div class="comment-content">
+<div class="comment-content" style="margin-bottom:100px">
     {{#if loggedIn}}
     <form id="comment-form">
         <label class="form-label">Comment:</label>
         <br>
-        <textarea class="form-textarea form-input" id="add-comment"></textarea>
+        <textarea class="comment-box" id="add-comment"></textarea>
         <br>
-        <button class="btn btn-primary" type="submit">comment</button>
+        <button class="submit-btn" type="submit">comment</button>
     </form>
+
     {{else}}
     <a href="/login" class="login-to-comment">Login to comment and like</a>
     {{/if}}
 </div>
+
+<div id="logout-page" class="modal">
+
+		<form class="profile-form animate" >
+			<span onclick="document.getElementById('logout-page').style.display='none'" class="close">&times;</span>
+			<h1 class="title">LOGOUT</h1>
+
+			<div class="container" style="background-color:#f1f1f1">
+				<button class="submit-btn" type="submit" id="logout">Confirm</button>
+			</div>
+		</form>
+</div>
+
+
+
+
 <script src="/js/comment.js"></script>

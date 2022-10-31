@@ -5,36 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
+    <title>TEAGRAM</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" href="/images/tea-icon.png">
 </head>
 
 <body>
-    <header>
-        <div class="jumbotron jumbotron-fluid">
-            <a href="/">Home</a>
-            {{#if loggedIn}}
-            <a href="/dashboard">Dashboard</a>
-            {{else}}
-            <a href="/login">Dashboard</a>
-            {{/if}}
-            <a href="#" id="logout">Logout</a>
-            
-        </div>
-    </header>
     <main>
-        <div id="create-post">
-            <a href="/userimage/profileimg" class="create-post">user profile info</a>
-        </div>
 
         {{{body}}}
-
-        <div id="create-post">
-            <a href="/dashboard/newPost" class="create-post">Create a Post</a>
-        </div>
 
     </main>
     <script src="/js/logout.js"></script>

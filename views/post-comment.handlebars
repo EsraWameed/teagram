@@ -19,7 +19,9 @@
                 <h5>Liked By:</h5>
                 <h6 id="like-status">{{>like posts.likes}}</h6>
                 {{#if loggedIn}}
+                {{#if posts.likedPost}}
                 <button type="button"  class="submit-btn" id="likebtn">Like</button>
+                {{/if}}
                 {{/if}}
             </div>
         </article>

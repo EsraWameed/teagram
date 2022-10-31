@@ -1,3 +1,5 @@
+
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -45,6 +47,14 @@ const signupFormHandler = async (event) => {
     }
   }
 };
+
+
+// Handlebars.registerHelper("checkUser", function(liked, login) {
+//   if(liked && login){
+//       return options.fn(this);
+//   }
+// });
+
 
 document
   .querySelector('.login-form')

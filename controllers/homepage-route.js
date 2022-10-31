@@ -44,7 +44,16 @@ router.get('/post/:id', async (req, res) => {
         });
 
         const posts = postData.get({ plain: true });
+        
+        const checkL = posts.likes.find(x => x.user_id === req.session.user_id);
+        
+        if(!checkL){
+            posts.likedPost = true;
+        }else{
+            posts.likedPost = false;
+        }
 
+        console.log(posts);
         res.render('post-comment', {
             posts,
             loggedIn: req.session.loggedIn

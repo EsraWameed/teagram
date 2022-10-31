@@ -46,6 +46,13 @@ const postLike = async (event) => {
     
 }
 
+// Handlebars.registerHelper("checkUser", function(liked, login, options) {
+//     if(liked && login){
+//         return options.fn(this);
+//     }
+//  });
+
+
 document.querySelector('#likebtn').addEventListener('click', postLike);
 
 document.querySelector('#comment-form').addEventListener('submit', postComment);

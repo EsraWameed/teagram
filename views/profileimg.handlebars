@@ -1,22 +1,31 @@
-<form action="/userimage" method="post" enctype="multipart/form-data">
-    <h1>Upload Photo</h1>
-    <input type="file" name="sampleFile" accept="image/*" />
-    <input type="submit" class="btn btn-primary">
-</form>
+ <aside class="sidebar">
+        <h1>TEAGRAM</h1>
+        <a href="/"><img src="/images/home-icon.png"></a>
+        <img onclick="document.getElementById('logout-page').style.display='block'" src="/images/logout-icon.png">
+</aside>
 
 
 
-<section>
-    
-    <div class="card">
-        {{#each userImg}}
-        <img class="" src="{{this.image_profile}}" alt="User Profile">
-        <a href="{{this.image_profile}}" download="">Download</a>
-        <h5>first name: {{this.firstName}}</h5>
-        <h5>last name: {{this.lastName}}</h5>
-        <h5>username: {{this.username}}</h5>
-        {{/each}}
-        
-    </div>
-    
+<section class="profile-page">
+    <form class="view-profile" action="/userimage" method="post" enctype="multipart/form-data">
+        <h1>Upload Profile Image</h1>
+        <label for="upload-file"><img class="upload-icon" src="/images/upload-icon.png"></label>
+        <input type="file" name="sampleFile" id="upload-file" accept="image/*" style="display:none">
+        <input type="submit" class="submit-btn">
+
+        <section>
+        <div class="card">
+            {{#each userImg}}
+            <img class="" src="{{this.image_profile}}" alt="User Profile">
+            <br><a href="{{this.image_profile}}" download="">Download</a></div>
+            <h5>first name: {{this.firstName}}</h5>
+            <h5>last name: {{this.lastName}}</h5>
+            <h5>username: {{this.username}}</h5>
+            {{/each}}
+        </div>
+    </section>
+    </form>
+
+
 </section>
+

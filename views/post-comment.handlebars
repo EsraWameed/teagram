@@ -1,11 +1,15 @@
 <section class="feed-page">
-    
-   <img src="{{posts.user.image_profile}}" alt="">
+    <aside class="sidebar">
+            <h1>TEAGRAM</h1>
+            <a href="/"><img src="/images/home-icon.png"></a>
+            <img onclick="document.getElementById('logout-page').style.display='block'" src="/images/logout-icon.png">
+        </aside>
+        
+   <img class="profile-img" src="{{posts.user.image_profile}}" alt="">
     
     
     <input type="hidden" value="{{posts.id}}" id="post-id-hidden-comment">
     <input type="hidden" value="{{users.id}}" id="user-id-hidden-comment">
-<h1 style="margin:0">POST</h1>
     <div class="feed" style="margin:0">
         <article class="posts">
             <h2>{{posts.user.username}}</h2>

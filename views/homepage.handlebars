@@ -37,21 +37,10 @@
 <div id="gallery-page" class="modal">
 	<div class="upload-form animate">
 		<span onclick="document.getElementById('gallery-page').style.display='none'" class="close">&times;</span>
-		<h1 class="title">YOUR POSTS<h1>
+		<h1 class="title">VIEW MY GALLERY</h1>
 
         <div class="container" style="background-color:#f1f1f1">
-            {{#each posts}}
-            <div class="feed">
-                <article class="posts">
-                    <h2>{{this.user.username}}</h2>
-                    <a href="/dashboard/editPost/{{this.id}}">
-                    <img class="user-post" src="{{this.image_post}}" alt="posted image">
-                    </a>
-
-                    <p class="caption">{{this.caption}}</p>
-                </article>
-            </div>
-            {{/each}}
+            <a href="/dashboard">CLICK</a>
         </div>
 	</div>
 </div>
@@ -75,18 +64,14 @@
 
 
  <div id="profile-page" class="modal">
+    <div class="profile-form animate">
+		<span onclick="document.getElementById('profile-page').style.display='none'" class="close">&times;</span>
+		<h1 class="title">UPLOAD MEDIA</h1>
 
-		<form class="profile-form animate">
-			<span onclick="document.getElementById('profile-page').style.display='none'" class="close">&times;</span>
-
-            <h1 class="title">YOUR ACCOUNT</h1>
-            <label  for="upload-file"><img class="change-profile" src="/images/profile-icon.pmg.png"></label>
-            <input type="file" id="upload-file">
-        
-            <div class="container profile-footer" style="background-color:#f1f1f1">
-                <button class="submit-btn" type="submit">Update Profile</button>
-            </div>
-		</form>
+        <div class="container" style="background-color:#f1f1f1">
+            <a href="/userimage/profileimg">CLICK</a>
+        </div>
+	</div>
 </div>
 
 <div id="logout-page" class="modal">

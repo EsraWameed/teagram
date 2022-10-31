@@ -83,9 +83,7 @@ footer {
     font-weight: 400;
 }
 
-.footer {
-    height: 50vh;
-}
+
 
 .company, .text {
     font-size: 300%;
@@ -97,7 +95,7 @@ footer {
 }
 
 .text {
-    font-size: 1100%;
+    font-size: 800%;
     color: white;
 }
 

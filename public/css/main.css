@@ -145,6 +145,10 @@ label {
     cursor: pointer;
 }
 
+.sidebar a {
+    text-align: center;
+    width: 100%;
+}
 .sidebar h1 {
     font-size: 26px;
     color: white;
@@ -166,6 +170,10 @@ label {
 .change-profile {
     width: 30%;
     margin-bottom: 10px;
+}
+.profile-page {
+    display:flex;
+    flex-direction: column;
 }
 
 .upload-icon {
@@ -232,9 +240,20 @@ input {
 }
 
 p {
-    color:white;
+    color:black;
     margin-bottom:0px;
 }
+
+.about {
+    margin-top: 100px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.about a {
+    color:#888;
+}
+
 
 /*set a style for the buttons*/
 .submit-btn, .signup-btn {
@@ -286,6 +305,13 @@ span.psw {
     padding-top: 16px;
 }
 
+
+.profile-img {
+    width:10%;
+    border: 5px solid rgb(232, 223, 223);
+    border-radius: 50%;
+    margin-left: 45%;
+}
 /*set the Modal background*/
 .modal {
     display: none;
@@ -314,6 +340,12 @@ span.psw {
     width: 30%;
 }
 
+.view-profile {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    width:100%;
+}
 
 .comment-content {
     text-align: center;
@@ -429,6 +461,9 @@ input:focus {
     }
     .sidebar img, .topbar img {
         width: 6%;
+    }
+    .sidebar a {
+        text-align:unset;
     }
     .sidebar h1 {
         display:none;

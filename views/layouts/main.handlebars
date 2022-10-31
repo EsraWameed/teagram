@@ -30,9 +30,6 @@
 				    <input type="password" id="password-login" placeholder="Password" name="psw" required>
 
 				    <button class="submit-btn" type="submit">Login</button>
-                    <p>Remember Me</p>
-				    <input type="checkbox" checked="checked"> 
-                    
 			    </div>
 
 			    <div class="container" style="background-color:#f1f1f1">
@@ -40,6 +37,10 @@
 			    </div>
 		    </form>
         </header>
+
+        <div class="about">
+            <a href="/aboutPage">Our Mission</a>
+        </div>
 
          <div id="signup-page" class="modal">
 
@@ -53,9 +54,6 @@
 				    <input type="text" placeholder="Username" id="name-signup" name="uname" required>
                     <input type="text" placeholder="Email" id="email-signup" name="email" required>
 				    <input type="password" placeholder="Password" id="password-signup" name="psw" required>
-                
-                    <p>Remember Me</p>
-				    <input type="checkbox" checked="checked"> 
 			    </div>
 
 			    <div class="container" style="background-color:#f1f1f1">
@@ -65,10 +63,12 @@
 	        </div>
 
         
-
             {{#if loggedIn}}
             <style>
                 .homepage {
+                    display:none;
+                }
+                .about {
                     display:none;
                 }
             </style>
@@ -81,6 +81,7 @@
             {{/if}}
 
 
+
     <main>
         {{{body}}}
     </main>
@@ -88,6 +89,8 @@
     {{#if loggedIn}}
     <script src="/js/logout.js"></script>
     {{/if}}
+
+    
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

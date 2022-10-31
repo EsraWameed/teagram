@@ -389,6 +389,10 @@ input:focus {
     animation: animatezoom 0.6s
 }
 
+.posts a{
+    text-decoration: none;
+}
+
 @-webkit-keyframes animatezoom {
     from {
         -webkit-transform: scale(0)

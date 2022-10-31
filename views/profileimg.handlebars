@@ -16,6 +16,7 @@
         <div>
             {{#each userImg}}
             <label for="upload-file"><img class="profile-icon" src="{{this.image_profile}}"></label>
+            <div class="preview-images"></div>
             <input type="file" name="sampleFile" id="upload-file" accept="image/*" style="display:none">
             {{!-- <img class="profile-img" src="{{this.image_profile}}" alt="User Profile">
             <br><a href="{{this.image_profile}}" download=""><img class="upload-icon" src="/images/download-icon.png"></a></br> --}}
@@ -30,6 +31,29 @@
         </section>
     </form>
 </section>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        let imagesPreview = function (input, placeToInsertImagePreview) {
+            if (input.files) {
+                let filesAmount = input.files.length;
+                for (i = 0; i < filesAmount; i++) {
+                    let reader = new FileReader();
+                    reader.onload = function (event) {
+                        $($.parseHTML("<img>"))
+                            .attr("src", event.target.result)
+                            .appendTo(placeToInsertImagePreview);
+                    };
+                    reader.readAsDataURL(input.files[i]);
+                }
+            }
+        };
+        $("#upload-file").on("change", function () {
+            imagesPreview(this, "div.preview-images");
+        });
+    });
+</script>
 
 <div id="logout-page" class="modal">
 

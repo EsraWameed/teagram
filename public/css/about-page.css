@@ -127,6 +127,7 @@ footer {
     border: none;
 }
 
+
 @media (max-width:900px) {
     .main-content::before {
         background-attachment:local;

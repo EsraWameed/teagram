@@ -1,17 +1,39 @@
-<form id="edit-form">
-    
-    <div class="">
-        <label class="form-label">Caption:</label>
-        <br>
-        <input class="form-input" type="text" id="edit-post-caption"/>
-    
-        <input type="hidden" value="{{posts.id}}" id="post-id-hidden">
-    </div>
+<aside class="sidebar">
+        <h1>TEAGRAM</h1>
+        <a href="/"><img src="/images/home-icon.png"></a>
+        <img onclick="document.getElementById('logout-page').style.display='block'" src="/images/logout-icon.png">
+</aside>
 
-    <button class="btn btn-primary" type="submit">Add Caption</button>
+<form id="edit-form" class="profile-page">
+    
+    <div class="upload-form">
+        <div>
+            <label class="form-label">Caption:</label>
+            <br>
+            <input class="form-input" type="text" id="edit-post-caption"/>
+            <input type="hidden" value="{{posts.id}}" id="post-id-hidden">
+        </div>
+
+        <button class="submit-btn" type="submit">Add Caption</button>
+
+        <div class="container" style="background-color:#f1f1f1; margin-top: 5%">
+            <button class="submit-btn" type="click" id="delete-btn">Delete Post</button>
+        </div>
+    </div>
 </form>
-<div class="delete-btn">
-    <button class="btn btn-primary" type="click" id="delete-btn">Delete Post</button>
+
+<div id="logout-page" class="modal">
+
+		<form class="profile-form animate" >
+			<span onclick="document.getElementById('logout-page').style.display='none'" class="close">&times;</span>
+			<h1 class="title">LOGOUT</h1>
+
+			<div class="container" style="background-color:#f1f1f1">
+				<button class="submit-btn" type="submit" id="logout">Confirm</button>
+			</div>
+		</form>
 </div>
 
 <script src="/js/edit.js"></script>
+
+

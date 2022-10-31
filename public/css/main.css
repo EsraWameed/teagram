@@ -503,6 +503,7 @@ input:focus {
     .topbar {
         display: flex;
         flex-direction: row;
+        align-items: center;
         height: 6%; 
         width: 100%; 
         position: fixed; 
@@ -515,13 +516,18 @@ input:focus {
         background-blend-mode: screen;
         overflow: hidden;
     }
-    .topbar a {
-        width: 100px;
-        margin-right: 10%;
-    }
+
     .topbar a img{
-        width: 100px;
-        margin-right: 10%;
+        width: 50px;
+    }
+    
+    #top-gallery-icon {
+        margin-right:2%;
+        margin-left: 21%;
+    }
+
+    #top-profile-icon{
+        margin-left:7%;
     }
 
     .topbar h1 {

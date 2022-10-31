@@ -18,7 +18,7 @@ app.use(fileUpload());
 const hbs = exphbs.create({ helpers });
 //connected to remote db
 const sess = {
-  secret: process.env.DB_SECRET,
+  secret: 'Super secret secret',
   cookie: {
         //session will expire in one hour idel time
         maxAge: 60 * 60 * 1000,

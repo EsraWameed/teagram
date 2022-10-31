@@ -8,9 +8,9 @@
         <aside class="sidebar">
             <h1>TEAGRAM</h1>
             <img src="/images/home-icon.png">
-            <img id="gallery-btn" src="/images/gallery-icon.png" onclick="document.getElementById('gallery-page').style.display='block'">
+            <a href="/dashboard"><img id="gallery-btn" src="/images/gallery-icon.png"></a>
             <img id="post-btn" onclick="document.getElementById('upload-page').style.display='block'" src="/images/white-plus-icon.png">
-            <img id="profile-btn" onclick="document.getElementById('profile-page').style.display='block'" src="/images/profile-icon.pmg.png">
+            <a href="/userimage/profileimg"><img id="profile-btn" src="/images/profile-icon.pmg.png"></a>
             <img onclick="document.getElementById('logout-page').style.display='block'" src="/images/logout-icon.png">
         </aside>
 
@@ -34,7 +34,7 @@
 </section>
 
 
-<div id="gallery-page" class="modal">
+{{!-- <div id="gallery-page" class="modal">
 	<div class="upload-form animate">
 		<span onclick="document.getElementById('gallery-page').style.display='none'" class="close">&times;</span>
 		<h1 class="title">VIEW MY GALLERY</h1>
@@ -43,7 +43,7 @@
             <a href="/dashboard">CLICK</a>
         </div>
 	</div>
-</div>
+</div> --}}
 
 <div id="upload-page" class="modal">
 	<div class="upload-form animate">
@@ -63,7 +63,7 @@
 </div>
 
 
- <div id="profile-page" class="modal">
+ {{!-- <div id="profile-page" class="modal">
     <div class="profile-form animate">
 		<span onclick="document.getElementById('profile-page').style.display='none'" class="close">&times;</span>
 		<h1 class="title">UPLOAD MEDIA</h1>
@@ -72,7 +72,7 @@
             <a href="/userimage/profileimg">CLICK</a>
         </div>
 	</div>
-</div>
+</div> --}}
 
 <div id="logout-page" class="modal">
 

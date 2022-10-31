@@ -7,25 +7,39 @@
 
 
 <section class="profile-page">
-    <form class="view-profile" action="/userimage" method="post" enctype="multipart/form-data">
-        <h1>Upload Profile Image</h1>
-        <label for="upload-file"><img class="upload-icon" src="/images/upload-icon.png"></label>
-        <input type="file" name="sampleFile" id="upload-file" accept="image/*" style="display:none">
-        <input type="submit" class="submit-btn">
+    <form class="upload-form" action="/userimage" method="post" enctype="multipart/form-data">
+        <h1 style="color:white">My Profile</h1>
+        {{!-- <label for="upload-file"><img class="upload-icon" src="/images/upload-icon.png"></label>
+        <input type="file" name="sampleFile" id="upload-file" accept="image/*" style="display:none"> --}}
 
         <section>
-        <div class="card">
+        <div>
             {{#each userImg}}
-            <img class="" src="{{this.image_profile}}" alt="User Profile">
-            <br><a href="{{this.image_profile}}" download="">Download</a></div>
+            <label for="upload-file"><img class="profile-icon" src="{{this.image_profile}}"></label>
+            <input type="file" name="sampleFile" id="upload-file" accept="image/*" style="display:none">
+            {{!-- <img class="profile-img" src="{{this.image_profile}}" alt="User Profile">
+            <br><a href="{{this.image_profile}}" download=""><img class="upload-icon" src="/images/download-icon.png"></a></br> --}}
             <h5>first name: {{this.firstName}}</h5>
             <h5>last name: {{this.lastName}}</h5>
             <h5>username: {{this.username}}</h5>
             {{/each}}
         </div>
-    </section>
+        <div class="container" style="background-color:#f1f1f1">
+            <input type="submit" class="submit-btn">
+        </div>
+        </section>
     </form>
-
-
 </section>
+
+<div id="logout-page" class="modal">
+
+		<form class="profile-form animate" >
+			<span onclick="document.getElementById('logout-page').style.display='none'" class="close">&times;</span>
+			<h1 class="title">LOGOUT</h1>
+
+			<div class="container" style="background-color:#f1f1f1">
+				<button class="submit-btn" type="submit" id="logout">Confirm</button>
+			</div>
+		</form>
+</div>
 

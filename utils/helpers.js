@@ -5,7 +5,7 @@ module.exports = {
       console.log("shsdhsdahsdh");
       return true;
     }else{
-      return;
+      return false;
     } 
   },
   format_time: (date) => {

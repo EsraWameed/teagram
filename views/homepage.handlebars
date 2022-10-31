@@ -1,8 +1,8 @@
 <section class="feed-page">
     <aside class="topbar">
         <h1>TEAGRAM</h1>
-        <img src="/images/gallery-icon.png" onclick="document.getElementById('gallery-page').style.display='block'">
-        <img onclick="document.getElementById('profile-page').style.display='block'" src="/images/profile-icon.pmg.png">
+        <a id="top-gallery-icon" href="/dashboard"><img  src="/images/gallery-icon.png"></a>
+        <a id="top-profile-icon" href="/userimage/profileimg"><img src="/images/profile-icon.pmg.png"></a>
     </aside>
 
     <aside class="sidebar">
@@ -38,18 +38,6 @@
 
 </section>
 
-
-{{!-- <div id="gallery-page" class="modal">
-    <div class="upload-form animate">
-        <span onclick="document.getElementById('gallery-page').style.display='none'" class="close">&times;</span>
-        <h1 class="title">VIEW MY GALLERY</h1>
-
-        <div class="container" style="background-color:#f1f1f1">
-            <a href="/dashboard">CLICK</a>
-        </div>
-    </div>
-</div> --}}
-
 <div id="upload-page" class="modal">
     <div class="upload-form animate">
         <span onclick="document.getElementById('upload-page').style.display='none'" class="close">&times;</span>
@@ -59,8 +47,8 @@
             <div class="container" style="background-color:#f1f1f1">
                 <label for="upload-file"><img class="upload-icon" src="/images/upload-icon.png"></label>
                 <input type="file" name="sampleFile" id="upload-file" accept="image/*">
+                <div class="preview-images"></div>
             </div>
-            <div class="preview-images"></div>
             <div class="container" style="background-color:#f1f1f1">
                 <input type="submit" class="submit-btn">
             </div>
@@ -89,17 +77,6 @@
         });
     });
 </script>
-
-{{!-- <div id="profile-page" class="modal">
-    <div class="profile-form animate">
-        <span onclick="document.getElementById('profile-page').style.display='none'" class="close">&times;</span>
-        <h1 class="title">UPLOAD MEDIA</h1>
-
-        <div class="container" style="background-color:#f1f1f1">
-            <a href="/userimage/profileimg">CLICK</a>
-        </div>
-    </div>
-</div> --}}
 
 <div id="logout-page" class="modal">
 

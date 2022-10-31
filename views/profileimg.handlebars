@@ -9,17 +9,14 @@
 <section class="profile-page">
     <form class="upload-form" action="/userimage" method="post" enctype="multipart/form-data">
         <h1 style="color:white">My Profile</h1>
-        {{!-- <label for="upload-file"><img class="upload-icon" src="/images/upload-icon.png"></label>
-        <input type="file" name="sampleFile" id="upload-file" accept="image/*" style="display:none"> --}}
-
+        
         <section>
         <div>
             {{#each userImg}}
             <label for="upload-file"><img class="profile-icon" src="{{this.image_profile}}"></label>
-            <div class="preview-images"></div>
+            <div class="preview-profile"></div>
             <input type="file" name="sampleFile" id="upload-file" accept="image/*" style="display:none">
-            {{!-- <img class="profile-img" src="{{this.image_profile}}" alt="User Profile">
-            <br><a href="{{this.image_profile}}" download=""><img class="upload-icon" src="/images/download-icon.png"></a></br> --}}
+            
             <h5>first name: {{this.firstName}}</h5>
             <h5>last name: {{this.lastName}}</h5>
             <h5>username: {{this.username}}</h5>
@@ -50,7 +47,7 @@
             }
         };
         $("#upload-file").on("change", function () {
-            imagesPreview(this, "div.preview-images");
+            imagesPreview(this, "div.preview-profile");
         });
     });
 </script>

@@ -18,11 +18,13 @@
             <div>
                 <h5>Liked By:</h5>
                 <h6 id="like-status">{{>like posts.likes}}</h6>
-                {{#if loggedIn}}
+                {{!-- {{#if loggedIn}} --}}
                 {{#if posts.likedPost}}
-                <button type="button"  class="submit-btn" id="likebtn">Like</button>
+                <button type="button"  class="submit-btn" id="likebtn" >Like</button>
+                {{else}}
+                <button type="button"  class="submit-btn" id="likebtn" disabled>Like</button>
                 {{/if}}
-                {{/if}}
+                {{!-- {{/if}} --}}
             </div>
         </article>
     </div>

@@ -2,15 +2,21 @@
 
 ## Overview
 
-
-
+As technology contiues to grow, people of all age groups have become more dependant on social media platforms to engage with others. TEAGRAM empowers its users through its networking technology, allowing them to develop meaningfull new connections and friendships. Users can truly stand out, as TEAGRAM gives its users the capability to build a platform, share their knowledge and create captivating content. Furthermore, users can grow their business with TEAGRAM as they share their brand with TEAGRAM's diverse community!
 
 ## Features
 
-- Users can post content to their profile with optional captions
-- Users can view and interact with other users content
-- Users can customize their profiles (profile icon, bio, username)
-- Application is completely responsive and accessible
+- When clicking on the login icon, users can create an account, or login to an existing account with TEAGRAM
+- Once logged in, the TEAGRAM coomunities posts are displayed on the users feed
+- When clicking on a post within the feed, users can like, comment, and view the users post
+- Through clicking on the gallery icon, users are directed to the gallery page, displaying all their posts
+- When clicking on a post within the gallery page, users can add a caption or delete an existing post of theirs
+- Users can conveniently create a new post by clicking the add icon, where a modal will allow them to upload a media file by clicking on the upload icon
+- Through clicking the profile icon, users can view their profile details and change their profile picture by clicking their current proifile picture
+- Users can easily logout by clicking the logout icon 
+- TEAGRAM is fully responsive and intended for mobile use!
+
+Link To [TEAGRAM]()
 
 ## Credit
 

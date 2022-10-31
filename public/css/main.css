@@ -518,7 +518,7 @@ input:focus {
     }
 
     .topbar a img{
-        width: 50px;
+        width: 30px;
     }
     
     #top-gallery-icon {
@@ -535,7 +535,7 @@ input:focus {
         color: white;
         margin:0;
         margin-left: 4%;
-        margin-right: 40%;
+        margin-right: 10%;
     }
     .login-form, .signup-form, .upload-form, .profile-form {
         width: 95%;

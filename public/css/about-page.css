@@ -14,47 +14,45 @@ h1 {
     font-weight: 900;
 }
 
-
-
 #logo {
     align-self: center;
     width: 5%;
+    margin-bottom:0;
 }
 
 /* The image lnked below is displayed as the background image */
 
-.second-content {
+.main-content {
     display:flex;
     flex-direction: column;
-    background-color: whitesmoke;
-    height: 100vh;
+    height: 120vh;
     align-items: center;
     margin: 0;
     text-align: center;
 }
 
 
-.third-content {
+.second-content {
     display:flex;
     flex-direction: column;
     height: 100vh;
 }
 
-.third-content{
+.second-content{
     content: '';
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     opacity: 1;
-    background-image: url('https://as2.ftcdn.net/v2/jpg/02/87/24/95/1000_F_287249541_Ui4Iqyp4ggPSuHg89yvvEWsB4ksH9jYT.jpg');
+    background-image: url(/public/images/4k-friends.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
 } 
 
-.fourth-content {
+.third-content {
     display:flex;
     flex-direction: column;
     margin-bottom: 200px;
@@ -83,7 +81,9 @@ footer {
     font-weight: 400;
 }
 
-
+.signup {
+    text-align: center;
+}
 
 .company, .text {
     font-size: 300%;
@@ -95,8 +95,9 @@ footer {
 }
 
 .text {
-    font-size: 800%;
+    font-size: 500%;
     color: white;
+    margin: 20%;
 }
 
 #smiling {
@@ -130,14 +131,18 @@ footer {
     .main-content::before {
         background-attachment:local;
     }
-    .third-content{
+    .second-content{
         background-attachment: local;
     } 
-    .second-content {
+    .third-content {
         display:flex;
         flex-wrap: wrap;
         display: column;
         height: 300vh;
+    }
+    .examples {
+        flex-direction: column;
+        margin:0;
     }
 
 }

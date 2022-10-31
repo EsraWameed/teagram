@@ -540,4 +540,7 @@ input:focus {
     .login-form, .signup-form, .upload-form, .profile-form {
         width: 95%;
     }
+     .login-btn{
+      width: 30%;
+    }
 }

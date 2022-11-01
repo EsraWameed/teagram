@@ -12,7 +12,8 @@ As technology contiues to grow, people of all age groups have become more depend
 - Through clicking on the gallery icon, users are directed to the gallery page, displaying all their posts
 - When clicking on a post within the gallery page, users can add a caption or delete an existing post of theirs
 - Users can conveniently create a new post by clicking the add icon, where a modal will allow them to upload a media file by clicking on the upload icon
-- Through clicking the profile icon, users can view their profile details and change their profile picture by clicking their current proifile picture
+- Through clicking the profile icon, users can view their profile details and change their profile picture by clicking their current profile picture
+- When clicking the upload profile picture, and selecting an image, a picture preview is displayed.
 - Users can easily logout by clicking the logout icon 
 - TEAGRAM is fully responsive and intended for mobile use!
 

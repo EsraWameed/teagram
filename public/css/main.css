@@ -136,7 +136,7 @@ input {
 }
 
 .caption {
-    color:rgb(232, 223, 223);
+    color: black;
     border: 3px solid rgb(232, 223, 223);
     height: 100px;
     width: 270px;

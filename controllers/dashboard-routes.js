@@ -2,7 +2,12 @@ const router = require('express').Router();
 const { Picture, User } = require('../models/');
 const Path = require("path");
 const { promises: Fs } = require('fs')
-const withAuth = require('../utils/auth')
+const withAuth = require('../utils/auth');
+const upload = require('../utils/multer');
+const path = require('path');
+const cloudinary = require('../utils/cloudinary');
+//
+const fs = require('fs');
 // router.get('/', async (req, res) => {
 //     try {
 //         // Get all projects and JOIN with user data
@@ -59,56 +64,98 @@ router.get('/', async (req, res) => {
 ////////
 
 //////////
-router.post("/",withAuth,  async (req, res) => {
-    //start writing the upload functionality
-    //creare a variable name that will hold the file
-    //keep consistent with form and call it sampleFile
-    let sampleFile;
-    let uploadPath;
-    //if object is empty send a message to alert
-    if (!req.files || Object.keys(req.files).length === 0) {
-        return res.status(400).send("No pictures uploaded")
-    }
-    //if not empty, grab the file
-    //name of the input is sampleFile. __dirname is main directory name
-    sampleFile = req.files.sampleFile;
+// router.post("/",withAuth,  async (req, res) => {
 
-    //add code to remove. timestap function --> current# as uploadname
-    uploadPath = __dirname + "/resource/upload/" + sampleFile.name;
-    //console log to see what object looks like
-    console.log(sampleFile.name);
-    const userData = await Picture.create({
-        image_post: `/upload/${sampleFile.name}`,
-        user_id: req.session.user_id,
-        caption: req.body.caption,
-    });
-    //use mv() to place file on server. grab sampleFile object and pass the path
-    // console.log(userData);
-    sampleFile.mv(uploadPath, function (err) {
-        if (err) return res.status(500).send(err);
+//     let sampleFile;
+//     let uploadPath;
 
-        // if file is rendered, display a message
+//     if (!req.files || Object.keys(req.files).length === 0) {
+//         return res.status(400).send("No pictures uploaded")
+//     }
+
+//     sampleFile = req.files.sampleFile;
+
+
+//     uploadPath = __dirname + "/resource/upload/" + sampleFile.name;
+
+//     console.log(sampleFile.name);
+//     const userData = await Picture.create({
+//         image_post: `/upload/${sampleFile.name}`,
+//         user_id: req.session.user_id,
+//         caption: req.body.caption,
+//     });
+
+//     sampleFile.mv(uploadPath, function (err) {
+//         if (err) return res.status(500).send(err);
+
+
+//         router.put("/", async (req, res) => {
+
+//             try {
+
+//                 userData.map((project) => project.get({ plain: true }));
+
+//             }
+//             catch (err) {
+//                 res.status(500).json(err)
+//             }
+
+//         });
+//     });
+
+
+
+//     res.redirect('/dashboard');
+
+// });
+//////
+///////
+router.post('/',withAuth, upload.array('image'), async (req, res) => {
+    const uploader = async (path) => await cloudinary.uploads(path, 'Images');
+
+    try {
+        const urls = [];
+        const files = req.files;
+
+        for (const file of files) {
+            const { path } = file;
+
+            const newPath = await uploader(path);
+
+            urls.push(newPath);
+
+            fs.unlinkSync(path);
+
+        }
+        console.log(urls[0].url);
+
+        const userData = await Picture.create({
+            image_post: urls[0].url,
+            user_id: req.session.user_id,
+            caption: req.body.caption,
+        });
+
         router.put("/", async (req, res) => {
-            
             try {
-                
                 userData.map((project) => project.get({ plain: true }));
-                // document.location.reload()
+
             }
             catch (err) {
                 res.status(500).json(err)
             }
 
         });
-    });
+        // res.status(200).json({
+        //     data: urls
+        // });
+        res.redirect('/dashboard');
 
-
-    // res.send("File Uploaded");
-    res.redirect('/dashboard');
-
-});
-//////
-
+    } catch (err) {
+        res.status(405).json(err);
+    }
+    
+})
+////////
 router.get('/editPost/:id', async (req, res) => {
     try {
         const postData = await Picture.findByPk(req.params.id);

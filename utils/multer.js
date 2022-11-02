@@ -1,21 +1,31 @@
-const multer = require("multer");
+const multer = require('multer');
+// const fol = require('../controllers/uploads');
 
-const imageFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith("image")) {
-    cb(null, true);
-  } else {
-    cb("Please upload only images.", false);
-  }
-};
+const storage = multer.diskStorage({
+    destination: function (req,file,cb){
+        cb(null, './uploads/');
+    },
 
-var storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, __basedir + "/resources/static/assets/uploads/");
-  },
-  filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-bezkoder-${file.originalname}`);
-  },
+    filename: function(req,file,cb){
+        cb(null, Date.now() + '-'+ file.originalname);
+    }
 });
 
-var uploadFile = multer({ storage: storage, fileFilter: imageFilter });
-module.exports = uploadFile;
+
+const fileFilter = (req,file, cb)=>{
+    if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/webp'){
+        cb(null, true);
+    }else{
+        cb({message: 'Unsupported file formate'}, false);
+    }
+}
+
+
+const upload = multer({
+    storage: storage,
+    // limits:{fileSize:1024*1024},
+    fileFilter: fileFilter
+})
+
+
+module.exports = upload;

@@ -2,7 +2,7 @@ const User = require('./User');
 const Picture = require('./Picture');
 const Comment = require('./Comment');
 const Like = require('./Like');
-
+// defining associations between models
 User.hasMany(Picture, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',

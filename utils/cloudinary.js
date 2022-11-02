@@ -1,4 +1,4 @@
-const cloudinary = require('cloudinary').v2;
+const cloudinary = require('cloudinary');
 
 const dotenv = require('dotenv');
 const { resolve } = require('path');

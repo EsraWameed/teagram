@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 class Comment extends Model {}
-
+//initislizing comment model with attributes id, comment_description, date_created, pic_id
 Comment.init(
   {
     id: {
@@ -41,4 +41,6 @@ Comment.init(
     modelName: 'comment',
   }
 );
+
+//exporting
 module.exports = Comment;

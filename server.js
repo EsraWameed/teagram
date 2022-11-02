@@ -5,7 +5,6 @@ const User = require("./models/User");
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
-// const fileUpload = require("express-fileupload");
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
@@ -18,7 +17,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// app.use(fileUpload());
+
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
@@ -50,7 +49,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-// app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 

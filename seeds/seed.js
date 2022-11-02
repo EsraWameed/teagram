@@ -7,7 +7,7 @@ const commentData = require('./commentData.json');
 const likeData = require('./likeData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-
+//used bulkCreate to insert multiple records using a single function call
   await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,

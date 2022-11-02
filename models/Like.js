@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 class Like extends Model {}
-
+//initialized model and associated attributes
 Like.init(
   {
     id: {

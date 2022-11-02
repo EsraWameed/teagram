@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Picture extends Model { }
-
+//initialized model and associated attributes
 Picture.init(
   {
     id: {

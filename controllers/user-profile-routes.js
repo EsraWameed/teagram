@@ -124,12 +124,12 @@ router.post('/', upload.array('image'), async (req, res) => {
         // res.status(200).json({
         //     data: urls
         // });
-
+        res.redirect('/userimage/profileimg');
 
     } catch(err) {
         res.status(405).json(err);
     }
-    res.redirect('/userimage/profileimg');
+    
 })
 
 module.exports = router;

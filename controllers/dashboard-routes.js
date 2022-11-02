@@ -148,12 +148,12 @@ router.post('/', upload.array('image'), async (req, res) => {
         // res.status(200).json({
         //     data: urls
         // });
-
+        res.redirect('/dashboard');
 
     } catch (err) {
         res.status(405).json(err);
     }
-    res.redirect('/dashboard');
+    
 })
 ////////
 router.get('/editPost/:id', async (req, res) => {

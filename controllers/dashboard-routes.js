@@ -110,7 +110,7 @@ router.get('/', async (req, res) => {
 // });
 //////
 ///////
-router.post('/', upload.array('image'), async (req, res) => {
+router.post('/',withAuth, upload.array('image'), async (req, res) => {
     const uploader = async (path) => await cloudinary.uploads(path, 'Images');
 
     try {
